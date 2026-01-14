@@ -282,7 +282,7 @@ const ReposetDetailSection: React.FC = () => {
 
         {/* Bear Image Placeholder */}
         <div className="w-48 shrink-0 relative z-10">
-          <img src="/images/bear-mascot.png" alt="Bear Mascot" className="w-full h-auto drop-shadow-lg" />
+          <img src="{`${import.meta.env.BASE_URL}images/bear-mascot.png`}" alt="Bear Mascot" className="w-full h-auto drop-shadow-lg" />
         </div>
 
         {/* Speech Bubble */}
@@ -381,7 +381,7 @@ const ReposetDetailSection: React.FC = () => {
             {[1, 2, 3, 4, 5, 6].map(i => (
               <div key={i} className="aspect-rectangle bg-stone-100 rounded-2xl border-2 border-stone-200 overflow-hidden group">
                 <img
-                  src={`/images/sketch${i}.png`}
+                  src={`${import.meta.env.BASE_URL}images/sketch${i}.png`}
                   alt={`Sketch ${i}`}
                   className="w-full h-full object-cover"
                 />
@@ -399,7 +399,7 @@ const ReposetDetailSection: React.FC = () => {
             {[1, 2, 3, 4, 5].map(i => (
               <div key={i} className="w-full h-full bg-stone-100 rounded-2xl border-2 border-stone-200 overflow-hidden group">
                 <img
-                  src={`/images/ideation${i}.png`}
+                  src={`${import.meta.env.BASE_URL}images/ideation${i}.png`}
                   alt={`Ideation Session ${i}`}
                   className="w-full h-full object-cover"
                 />
@@ -431,7 +431,7 @@ const ReposetDetailSection: React.FC = () => {
               <li>Two options prioritize underused pieces, while another includes a recently worn item to preserve user autonomy for personal, emotional, or comfort-based choices.</li>
             </ul>
           }
-          videoSrc="/videos/context-aware-outfit-planning.mp4"
+          videoSrc={`${import.meta.env.BASE_URL}/videos/context-aware-outfit-planning.mp4`}
           videoLabel="Outfit Planning"
         />
 
@@ -447,7 +447,7 @@ const ReposetDetailSection: React.FC = () => {
               <li>For pieces hidden in piles that can’t be shown directly on a 2D map, small arrows & annotations point them out.</li>
             </ul>
           }
-          videoSrc="/videos/digital-map.mp4"
+          videoSrc={`${import.meta.env.BASE_URL}/videos/digital-map.mp4`}
           videoLabel="Map Localization"
         />
 
@@ -468,8 +468,8 @@ const ReposetDetailSection: React.FC = () => {
           iterationTitle="Packing Checklist & Feedback Flow Redesign"
           beforeText="The packing checklist removed items immediately when tapped, making slips easy to miss and hard to correct. The feedback form then presented many detailed text options at once, forcing users to read extensively, map issues to specific items, and sometimes type custom responses."
           afterText="In the checklist, items can be checked and unchecked and are only confirmed with a clear “Finish packing” action. For feedback, users tap the specific packed item visually, then choose from a short, item-specific issue list, reducing reading and decision load."
-          beforeVideoSrc="/videos/packing1.mp4"
-          afterVideoSrc="/videos/packing2.mp4"
+          beforeVideoSrc={`${import.meta.env.BASE_URL}/videos/packing1.mp4`}
+          afterVideoSrc={`${import.meta.env.BASE_URL}/videos/packing2.mp4`}
         />
 
         {/* Feature 4: Outfit Photo Check-In, Bear Companion & Rotation Tracking */}
@@ -484,7 +484,7 @@ const ReposetDetailSection: React.FC = () => {
               <li>The bear responds immediately: using not recently worn items raises the battery and earns rotation points, while repeats or skipping check-in lower them. If the battery drops too low, personalized suggestions pause until an underused item is restyled.</li>
             </ul>
           }
-          videoSrc="/videos/checkin-with-bear.mp4"
+          videoSrc={`${import.meta.env.BASE_URL}/videos/checkin-with-bear.mp4`}
           videoLabel="Check-In Flow"
         />
 
@@ -505,8 +505,8 @@ const ReposetDetailSection: React.FC = () => {
           iterationTitle="Bulk vs. Single Upload"
           beforeText="Update prompts forced users into updating without a clear way to postpone. Wardrobe updates relied on a rigid, bulk upload flow. While some users appreciated the efficiency of capturing many items together, others found it quite effortful as it requires space, time, and taking out a portion of their closet. Instructional screens repeated every time, not suitable for advanced users. Example category cards looked clickable but weren’t."
           afterText="Update prompts allow postponement. Supports both single-item quick adds and bulk uploads, with multiple photos in either path. Instructions can be skipped by returning users. Example categories no longer appear clickable."
-          beforeVideoSrc="/videos/update1.mp4"
-          afterVideoSrc="/videos/update2.mp4"
+          beforeVideoSrc={`${import.meta.env.BASE_URL}/videos/update1.mp4`}
+          afterVideoSrc={`${import.meta.env.BASE_URL}/videos/update2.mp4`}
         />
 
         {/* Feature 6: Rotation Points & Reward System */}
@@ -524,7 +524,7 @@ const ReposetDetailSection: React.FC = () => {
             </ul>
           }
           iterationNote="New feature from usability testing"
-          videoSrc="/videos/rotation-reward.mp4"
+          videoSrc={`${import.meta.env.BASE_URL}/videos/rotation-reward.mp4`}
           videoLabel="Rotation Points & Reward System"
         />
       </section>
@@ -536,7 +536,7 @@ const ReposetDetailSection: React.FC = () => {
           <div className="bg-black rounded-[2.5rem] overflow-hidden aspect-video relative group">
             {/* Actual Video */}
             <video
-              src="/videos/reposet-showcase.mp4"
+              src={`${import.meta.env.BASE_URL}/videos/reposet-showcase.mp4`}
               className="w-full h-full object-cover"
               controls
             />

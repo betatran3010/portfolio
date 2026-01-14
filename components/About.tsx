@@ -1,33 +1,6 @@
 
 import React from 'react';
 
-const activities = [
-  {
-    name: "Resell",
-    role: "Associate Product Manager",
-    description: "Leading a cross-functional team to develop, design, and market.",
-    image: "images/campus-resell.jpg"
-  },
-  {
-    name: "Cornell UX Design",
-    role: "External Community Lead",
-    description: "Cultivating a supportive design community.",
-    image: "images/campus-cuxd.jpg"
-  },
-  {
-    name: "Women in Computing at Cornell",
-    role: "Design Director",
-    description: "Creating inclusive spaces for women and gender minorities in tech.",
-    image: "images/campus-wicc.jpg"
-  },
-  {
-    name: "Intro to Digital Product Design",
-    role: "Teaching Assistant",
-    description: "Mentoring the next generation of product designers at Cornell.",
-    image: "images/campus-intro-dpd.jpg"
-  }
-];
-
 const About: React.FC = () => {
   return (
     <div className="pb-24 w-full animate-[fadeIn_0.5s_ease-out]">
@@ -60,9 +33,9 @@ const About: React.FC = () => {
           <div className="absolute inset-0 bg-ink rounded-[2.5rem] transform translate-x-4 translate-y-4"></div>
           <div className="relative bg-primary-light rounded-[2.5rem] overflow-hidden border-2 border-slate-100 aspect-square md:aspect-[3/4]">
             <picture>
-              <source media="(min-width: 768px)" srcSet="images/portrait.JPG" />
+              <source media="(min-width: 768px)" srcSet="{`${import.meta.env.BASE_URL}images/portrait.JPG`}" />
               <img
-                src="images/portrait-square.jpg"
+                src={`${import.meta.env.BASE_URL}images/portrait-square.jpg`}
                 alt="Tran Le"
                 className="w-full h-full object-cover opacity-90"
               />
@@ -91,7 +64,7 @@ const About: React.FC = () => {
           <div className="flex flex-col gap-4 md:gap-6">
             {/* Row 1: 2 Photos */}
             <div className="grid grid-cols-2 gap-4 md:gap-6 h-64 md:h-80">
-              {['images/wicc-prof-abe-davis.JPG', 'images/wicc-prof-andrea-won.JPG'].map((src, i) => (
+              {[`${import.meta.env.BASE_URL}images/wicc-prof-abe-davis.JPG`, `${import.meta.env.BASE_URL}images/wicc-prof-andrea-won.JPG`].map((src, i) => (
                 <div key={i} className="w-full h-full bg-slate-100 rounded-[2rem] overflow-hidden border-2 border-slate-100 shadow-sm">
                   <img
                     src={src}
@@ -107,7 +80,7 @@ const About: React.FC = () => {
 
             {/* Row 1: 2 Photos */}
             <div className="grid grid-cols-2 gap-4 md:gap-6 h-64 md:h-80">
-              {['images/wicc-org.JPEG', 'images/wicc-clubfest.jpg'].map((src, i) => (
+              {[`${import.meta.env.BASE_URL}images/wicc-org.JPEG`, `${import.meta.env.BASE_URL}images/wicc-clubfest.jpg`].map((src, i) => (
                 <div key={i} className="w-full h-full bg-slate-100 rounded-[2rem] overflow-hidden border-2 border-slate-100 shadow-sm">
                   <img
                     src={src}
@@ -136,7 +109,7 @@ const About: React.FC = () => {
 
           <div className="w-full aspect-video bg-slate-100 rounded-[2rem] overflow-hidden border-2 border-slate-100 shadow-sm">
             <img
-              src="images/cct-lab-outing.jpg"
+              src={`${import.meta.env.BASE_URL}images/cct-lab-outing.jpg`}
               alt="CCT Lab Outing"
               className="w-full h-full object-cover"
               onError={(e) => {

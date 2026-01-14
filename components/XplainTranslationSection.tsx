@@ -370,7 +370,7 @@ const XplainTranslationSection: React.FC = () => {
           <div className="flex flex-col gap-8 w-full">
             <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200 w-full">
               <video
-                src="videos/language-switching.mp4"
+                src={`${import.meta.env.BASE_URL}videos/language-switching.mp4`}
                 autoPlay
                 loop
                 muted
@@ -383,7 +383,7 @@ const XplainTranslationSection: React.FC = () => {
             </div>
             <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200 w-full">
               <video
-                src="videos/translation-conversation.mp4"
+                src={`${import.meta.env.BASE_URL}videos/translation-conversation.mp4`}
                 autoPlay
                 loop
                 muted

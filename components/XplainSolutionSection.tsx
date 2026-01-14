@@ -39,13 +39,13 @@ const XplainSolutionSection: React.FC = () => {
           {/* Visuals - Stacked */}
           <div className="flex flex-col gap-8">
             <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src="images/clarifications.png" alt="First encounter with an unfamiliar term" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}images/clarifications.png`} alt="First encounter with an unfamiliar term" className="w-full h-full object-cover" />
               <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
                 First encounter with an unfamiliar term
               </div>
             </div>
             <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src="images/expanded-clarifications.png" alt="Revisiting a prior clarification" className="w-full h-full object-cover" />              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
+              <img src={`${import.meta.env.BASE_URL}images/expanded-clarifications.png`} alt="Revisiting a prior clarification" className="w-full h-full object-cover" />              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
                 Revisiting a prior clarification
               </div>
             </div>
@@ -66,13 +66,13 @@ const XplainSolutionSection: React.FC = () => {
           {/* Visuals - Stacked */}
           <div className="flex flex-col gap-8">
             <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src="images/idea-suggestions.png" alt="Idea-level suggestion" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}images/idea-suggestions.png`} alt="Idea-level suggestion" className="w-full h-full object-cover" />
               <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
                 Idea-level suggestion
               </div>
             </div>
             <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src="images/sentence-suggestions.png" alt="Sentence-level suggestion" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}images/sentence-suggestions.png`} alt="Sentence-level suggestion" className="w-full h-full object-cover" />
               <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
                 Sentence-level suggestion (with bidirectional framing to avoid biasing user opinions in agreeing/disagreeing questions)
               </div>
@@ -94,13 +94,13 @@ const XplainSolutionSection: React.FC = () => {
           {/* Visuals - Stacked */}
           <div className="flex flex-col gap-8">
             <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src="images/topic-summary.png" alt="Topic-shift summary" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}images/topic-summary.png`} alt="Topic-shift summary" className="w-full h-full object-cover" />
               <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
                 Topic-shift summary
               </div>
             </div>
             <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src="images/meeting-summary.png" alt="End-of-meeting summary" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}images/meeting-summary.png`} alt="End-of-meeting summary" className="w-full h-full object-cover" />
               <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
                 End-of-meeting summary
               </div>

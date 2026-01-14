@@ -156,9 +156,9 @@ const XplainPersonalizationSection: React.FC = () => {
           {/* Visuals - Stacked */}
           <div className="flex flex-col gap-8 mt-6">
             {[
-              { label: "Low Proficiency Clarification", img: "images/low-clarification.png" },
-              { label: "Medium Proficiency Clarification", img: "images/medium-clarification.png" },
-              { label: "High Proficiency Clarification", img: "images/high-clarification.png" }
+              { label: "Low Proficiency Clarification", img: `${import.meta.env.BASE_URL}images/low-clarification.png` },
+              { label: "Medium Proficiency Clarification", img: `${import.meta.env.BASE_URL}images/medium-clarification.png` },
+              { label: "High Proficiency Clarification", img: `${import.meta.env.BASE_URL}images/high-clarification.png` }
             ].map((item, i) => (
               <div key={i} className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
                 <img src={item.img} alt={`${item.label} Example`} className="w-full h-auto object-cover" />
@@ -218,9 +218,9 @@ const XplainPersonalizationSection: React.FC = () => {
           {/* Visuals - Stacked */}
           <div className="flex flex-col gap-8">
             {[
-              { label: "Low Proficiency Suggestion", img: "images/low-suggestion.png" },
-              { label: "Medium Proficiency Suggestion", img: "images/medium-suggestion.png" },
-              { label: "High Proficiency Suggestion", img: "images/high-suggestion.png" }
+              { label: "Low Proficiency Suggestion", img: `${import.meta.env.BASE_URL}images/low-suggestion.png` },
+              { label: "Medium Proficiency Suggestion", img: `${import.meta.env.BASE_URL}images/medium-suggestion.png` },
+              { label: "High Proficiency Suggestion", img: `${import.meta.env.BASE_URL}images/high-suggestion.png` }
             ].map((item, i) => (
               <div key={i} className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
                 <img src={item.img} alt={`${item.label} Example`} className="w-full h-auto object-cover" />
@@ -268,7 +268,7 @@ const XplainPersonalizationSection: React.FC = () => {
           </div>
 
           <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-            <img src="images/all-summary.png" alt="Iterated Summary Design" className="w-full h-full object-cover" />
+            <img src={`${import.meta.env.BASE_URL}images/all-summary.png`} alt="Iterated Summary Design" className="w-full h-full object-cover" />
             <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
               Iterated Summary Design
             </div>

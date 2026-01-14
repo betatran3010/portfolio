@@ -71,7 +71,7 @@ const App: React.FC = () => {
     if (currentView === 'works') {
       // If there is a targetScrollId, wait a bit for rendering then scroll to it.
       // If NO targetScrollId, we scroll to top immediately to reset view.
-      
+
       if (targetScrollId) {
         // Attempt to scroll to the target card
         const attemptScroll = (attempts: number) => {
@@ -84,12 +84,12 @@ const App: React.FC = () => {
             // Not found yet, try again shortly
             setTimeout(() => attemptScroll(attempts - 1), 100);
           } else {
-             // Give up, clear target
-             setTargetScrollId(null);
+            // Give up, clear target
+            setTargetScrollId(null);
           }
         };
         // Start attempts
-        setTimeout(() => attemptScroll(5), 100); 
+        setTimeout(() => attemptScroll(5), 100);
       } else {
         // No target, default behavior: Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -109,9 +109,9 @@ const App: React.FC = () => {
       const project = projects.find(p => p.id === currentView.id);
       if (project) {
         return (
-          <ProjectDetail 
-            project={project} 
-            onBack={() => setCurrentView('works')} 
+          <ProjectDetail
+            project={project}
+            onBack={() => setCurrentView('works')}
             onNext={handleNextProject}
           />
         );
@@ -134,12 +134,15 @@ const App: React.FC = () => {
             <section id="works-grid" className="space-y-16 pt-8 scroll-mt-24">
               {projects.map(project => (
                 <div id={`project-card-${project.id}`} key={project.id}>
-                  <ProjectCard 
-                    project={project} 
+                  <ProjectCard
+                    project={project}
                     onClick={(id) => {
                       if (id === 2) {
                         // Healthcare Project - Opens PDF
-                        window.open('/documents/healthcare-international-students.pdf', '_blank');
+                        window.open(
+                          `${import.meta.env.BASE_URL}documents/healthcare-international-students.pdf`,
+                          '_blank'
+                        );
                       } else if (id === 4) {
                         // Duolingo - Opens Website Link
                         window.open('https://medium.com/@trannble/write-it-down-remember-it-later-designing-duolingos-note-taking-experience-9f8f5ce9a174', '_blank');
@@ -160,7 +163,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-paper text-ink font-sans selection:bg-primary-light selection:text-primary-dark relative">
-      
+
       <Navbar currentView={currentView} onChangeView={(view) => {
         if (view === 'resume') {
           window.open('/documents/resume.pdf', '_blank');
@@ -183,15 +186,15 @@ const App: React.FC = () => {
             Thanks for visiting my portfolio!
           </h2>
           <div className="flex items-center gap-4">
-             <a href="mailto:@tnl22@cornell.edu" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="Email">
-               <Mail className="w-5 h-5" />
-             </a>
-             <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="LinkedIn">
-               <Linkedin className="w-5 h-5" />
-             </a>
-             <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="GitHub">
-               <Github className="w-5 h-5" />
-             </a>
+            <a href="mailto:@tnl22@cornell.edu" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="Email">
+              <Mail className="w-5 h-5" />
+            </a>
+            <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="LinkedIn">
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="GitHub">
+              <Github className="w-5 h-5" />
+            </a>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-slate-400 font-bold text-sm">
             <span>Let's connect at tnl22@cornell.edu!</span>
