@@ -62,15 +62,61 @@ const projects: Project[] = [
   },
 ];
 
+// Helper to parse the current hash into a View
+const getViewFromHash = (): View => {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'about') return 'about';
+  if (hash === 'resume') return 'resume';
+  if (hash.startsWith('project/')) {
+    const id = parseInt(hash.split('/')[1]);
+    if (!isNaN(id)) return { type: 'project', id };
+  }
+  return 'works';
+};
+
 const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<View>('works');
+  // Initialize state based on current URL hash
+  const [currentView, setCurrentView] = useState<View>(getViewFromHash());
   const [targetScrollId, setTargetScrollId] = useState<number | null>(null);
+
+  // 1. Listen for URL hash changes (Browser Back/Forward)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const newView = getViewFromHash();
+      // Only update if different to avoid redundancy
+      setCurrentView(prev => {
+        if (JSON.stringify(prev) !== JSON.stringify(newView)) {
+          return newView;
+        }
+        return prev;
+      });
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // 2. Update URL hash when State changes (UI Navigation)
+  useEffect(() => {
+    let targetHash = '';
+    if (currentView === 'works') targetHash = 'works';
+    else if (currentView === 'about') targetHash = 'about';
+    else if (currentView === 'resume') targetHash = 'resume';
+    else if (typeof currentView === 'object' && currentView.type === 'project') {
+      targetHash = `project/${currentView.id}`;
+    }
+
+    const currentHash = window.location.hash.replace('#', '');
+    if (currentHash !== targetHash) {
+      // Use pushState to update URL without triggering hashchange event loop
+      window.history.pushState(null, '', `#${targetHash}`);
+    }
+  }, [currentView]);
 
   // Handle scrolling when switching back to works
   useEffect(() => {
     if (currentView === 'works') {
       // If there is a targetScrollId, wait a bit for rendering then scroll to it.
-      // If NO targetScrollId, we scroll to top immediately to reset view.
 
       if (targetScrollId) {
         // Attempt to scroll to the target card
@@ -90,9 +136,6 @@ const App: React.FC = () => {
         };
         // Start attempts
         setTimeout(() => attemptScroll(5), 100);
-      } else {
-        // No target, default behavior: Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
   }, [currentView, targetScrollId]);
@@ -111,7 +154,10 @@ const App: React.FC = () => {
         return (
           <ProjectDetail
             project={project}
-            onBack={() => setCurrentView('works')}
+            onBack={() => {
+              setCurrentView('works');
+              window.scrollTo(0, 0);
+            }} 
             onNext={handleNextProject}
           />
         );
