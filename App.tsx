@@ -235,10 +235,10 @@ const App: React.FC = () => {
             <a href="mailto:@tnl22@cornell.edu" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="Email">
               <Mail className="w-5 h-5" />
             </a>
-            <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/tranle3010/" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="GitHub">
+            <a href="https://github.com/betatran3010" className="p-3 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors text-white" aria-label="GitHub">
               <Github className="w-5 h-5" />
             </a>
           </div>
