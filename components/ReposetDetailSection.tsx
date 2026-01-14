@@ -282,7 +282,7 @@ const ReposetDetailSection: React.FC = () => {
 
         {/* Bear Image Placeholder */}
         <div className="w-48 shrink-0 relative z-10">
-          <img src="{`${import.meta.env.BASE_URL}images/bear-mascot.png`}" alt="Bear Mascot" className="w-full h-auto drop-shadow-lg" />
+          <img src={`${import.meta.env.BASE_URL}images/bear-mascot.png`} alt="Bear Mascot" className="w-full h-auto drop-shadow-lg" />
         </div>
 
         {/* Speech Bubble */}

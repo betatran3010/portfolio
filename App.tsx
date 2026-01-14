@@ -166,7 +166,7 @@ const App: React.FC = () => {
 
       <Navbar currentView={currentView} onChangeView={(view) => {
         if (view === 'resume') {
-          window.open('/documents/resume.pdf', '_blank');
+          window.open(`${import.meta.env.BASE_URL}documents/tran-le-resume.pdf`, '_blank');
         } else {
           setCurrentView(view);
           window.scrollTo(0, 0);

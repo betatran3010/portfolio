@@ -33,7 +33,7 @@ const About: React.FC = () => {
           <div className="absolute inset-0 bg-ink rounded-[2.5rem] transform translate-x-4 translate-y-4"></div>
           <div className="relative bg-primary-light rounded-[2.5rem] overflow-hidden border-2 border-slate-100 aspect-square md:aspect-[3/4]">
             <picture>
-              <source media="(min-width: 768px)" srcSet="{`${import.meta.env.BASE_URL}images/portrait.JPG`}" />
+              <source media="(min-width: 768px)" srcSet={`${import.meta.env.BASE_URL}images/portrait.JPG`} />
               <img
                 src={`${import.meta.env.BASE_URL}images/portrait-square.jpg`}
                 alt="Tran Le"
