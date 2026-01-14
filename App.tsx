@@ -13,17 +13,17 @@ const projects: Project[] = [
   {
     id: 1,
     title: "XPLAIN",
-    context: "Communication and Collaborative Technologies Lab",
+    context: "Communication & Collaborative Technologies Lab",
     problem: "How might we design a proactive AI system that anticipates and scaffolds prediction during real-time turn-taking to reduce comprehension, production, and participation barriers faced by non-native speakers in computer-mediated live conversations?",
     image: `${import.meta.env.BASE_URL}images/xplain-cover.png`,
     tags: ["CSCW", "AI-Mediated Communication", "Inclusive Design", "Wizard-of-Oz", "Psycholinguistics", "Mixed-Methods Data Analysis"],
     year: "Feb 2025–present",
     description: "A proactive AI assistant that scaffolds comprehension, idea formation, and alignment for non-native speakers in computer-mediated live conversations.",
     role: "Research Assistant",
-    team: "1 PhD student, 5 undergraduate students",
+    team: "1 Professor, 1 PhD student, 5 undergraduate students",
     duration: "Feb 2025–present",
     tools: ["Figma", "ATLAS.ti", "R", "Qualtrics"],
-    contextOverview: "XPLAIN is a long-running HCI research project examining how proactive AI content prediction and generation can support non-native speakers in real-time video meetings. I contributed to the design, prototyping, and evaluation of XPLAIN across multiple Wizard-of-Oz studies, spanning literature review, conversational scenario design, interface design and prototyping, survey development, user studies, and data analysis.",
+    contextOverview: "XPLAIN is a long-running HCI research project with Professor Susan Fussell examining how proactive AI content prediction and generation can support non-native speakers in real-time video meetings. I contributed to the design, prototyping, and evaluation of XPLAIN across multiple Wizard-of-Oz studies, spanning literature review, conversational scenario design, interface design and prototyping, survey development, user studies, and data analysis.",
   },
   {
     id: 2,
@@ -64,6 +64,9 @@ const projects: Project[] = [
 
 // Helper to parse the current hash into a View
 const getViewFromHash = (): View => {
+  // Ensure window exists (for safety)
+  if (typeof window === 'undefined') return 'works';
+
   const hash = window.location.hash.replace('#', '');
   if (hash === 'about') return 'about';
   if (hash === 'resume') return 'resume';
@@ -75,8 +78,8 @@ const getViewFromHash = (): View => {
 };
 
 const App: React.FC = () => {
-  // Initialize state based on current URL hash
-  const [currentView, setCurrentView] = useState<View>(getViewFromHash());
+  // Initialize state based on current URL hash - using lazy init to avoid window access issues during module load
+  const [currentView, setCurrentView] = useState<View>(() => getViewFromHash());
   const [targetScrollId, setTargetScrollId] = useState<number | null>(null);
 
   // 1. Listen for URL hash changes (Browser Back/Forward)
@@ -157,7 +160,7 @@ const App: React.FC = () => {
             onBack={() => {
               setCurrentView('works');
               window.scrollTo(0, 0);
-            }} 
+            }}
             onNext={handleNextProject}
           />
         );
@@ -209,7 +212,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-paper text-ink font-sans selection:bg-primary-light selection:text-primary-dark relative">
-
+      
       <Navbar currentView={currentView} onChangeView={(view) => {
         if (view === 'resume') {
           window.open(`${import.meta.env.BASE_URL}documents/tran-le-resume.pdf`, '_blank');
