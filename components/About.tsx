@@ -57,7 +57,7 @@ const About: React.FC = () => {
               Women in Computing at Cornell <span className="font-sans font-normal text-ink-light text-xl block sm:inline sm:ml-2"> - Faculty Relations Director</span>
             </h3>
             <p className="text-lg text-ink-light font-medium leading-relaxed max-w-4xl">
-              Fostering an inclusive community for women and gender minorities in tech. I specifically organize the Lunch Bunch program, facilitating weekly roundtable discussions that connect underclassmen with faculty and promote early research engagement. I also represent WICC and the student body in faculty board meetings to discuss coursework, advising, workload, and departmental improvements.
+              Fostering an inclusive community for women and gender minorities in tech. I organize the Lunch Bunch program, facilitating weekly roundtable discussions that connect underclassmen with faculty and encourage early research engagement. I engage with many accomplished HCI researchers and learn about their work through this initiative! I also represent WICC and the student body in faculty board meetings to discuss coursework, advising, workload, and departmental improvements.            
             </p>
           </div>
 
