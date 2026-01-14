@@ -5,7 +5,6 @@ import ProjectCard from './components/ProjectCard';
 import ProjectDetail from './components/ProjectDetail';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import Resume from './components/Resume';
 import { Project, SectionId, View } from './types';
 import { Linkedin, Mail, Heart, Github } from 'lucide-react';
 
@@ -170,8 +169,6 @@ const App: React.FC = () => {
     switch (currentView) {
       case 'about':
         return <About />;
-      case 'resume':
-        return <Resume />;
       case 'works':
       default:
         return (
