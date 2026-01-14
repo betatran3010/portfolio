@@ -51,7 +51,7 @@ const XplainTranslationSection: React.FC = () => {
             </h4>
             <div className="prose text-ink-light leading-relaxed text-lg space-y-4">
               <p>
-                In the baseline study, some participants suggested translation-based support, reporting that native-language explanations felt faster and less mentally taxing. This aligns with psycholinguistic findings that bilingual speakers process meaning less automatically in L2 and require more effort to resolve conceptual difficulty, especially under time pressure.
+                In the baseline study, some participants suggested translation-based support, reporting that native-language explanations would feel faster and less mentally taxing. This aligns with psycholinguistic findings that bilingual speakers process meaning less automatically in L2 and require more effort to resolve conceptual difficulty, especially under time pressure.
               </p>
 
               <p>
@@ -181,14 +181,13 @@ const XplainTranslationSection: React.FC = () => {
             <ul className="space-y-4 text-lg text-ink-light font-medium list-disc pl-6 marker:text-primary">
               <li>Participants: Chinese–English bilinguals.</li>
               <li>Conceptual L1/L2 familiarity was excluded due to high subjectivity and individual variability (lexical L2 familiarity was retained, as clarifications are designed to support access to unfamiliar L2 terms).</li>
-              <li>Single live conversation (~20 min) within a 1-hour session.</li>
               <li>12 clarification events per participant (1 per condition).</li>
             </ul>
 
             <div className="pt-4 space-y-4">
               <h5 className="font-bold text-ink text-sm tracking-wide">Why only clarifications?</h5>
               <p className="text-lg text-slate-500 leading-relaxed">
-                Given the 1-hour session constraint and a ~20-minute live conversation needed to preserve natural interaction and allow pre- and post-task measures, we focused exclusively on clarification support. Clarifications are the most direct and controllable form of assistance, enabling precise experimental manipulation without altering prescripted conversational flow. Including additional features (i.e., suggestions or summaries) would have added factors, extended session length, and increased participant fatigue, reducing both ecological validity and measurement reliability.
+                Given the 1-hour session constraint with a ~30-minute live conversation needed to preserve natural interaction and allow pre- and post-task measures, we focused exclusively on clarification support. Clarifications are the most direct and controllable form of assistance, enabling precise experimental manipulation without altering prescripted conversational flow. Including additional features (i.e., suggestions or summaries) would have added factors, extended session length, and increased participant fatigue, reducing both ecological validity and measurement reliability.
               </p>
             </div>
           </div>
