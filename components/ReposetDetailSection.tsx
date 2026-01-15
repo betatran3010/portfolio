@@ -375,7 +375,7 @@ const ReposetDetailSection: React.FC = () => {
         {/* Brainstorming Grid */}
         <div className="mb-12">
           <h4 className="font-bold text-stone-500 uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-            <Camera className="w-4 h-4" /> Design Brainstorming Grid
+            <Camera className="w-4 h-4" /> Some of My Design Brainstorming Sketches
           </h4>
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4, 5, 6].map(i => (
@@ -393,7 +393,7 @@ const ReposetDetailSection: React.FC = () => {
         {/* Ideation Session Stack */}
         <div>
           <h4 className="font-bold text-stone-500 uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-            <Camera className="w-4 h-4" /> Ideation Session Grid
+            <Camera className="w-4 h-4" /> Ideation Sessions
           </h4>
           <div className="flex flex-col gap-6">
             {[1, 2, 3, 4, 5].map(i => (
