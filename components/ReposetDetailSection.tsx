@@ -453,12 +453,12 @@ const ReposetDetailSection: React.FC = () => {
         {/* Feature 3: Packing List (Comparison) */}
         <FeatureRow
           number="3"
-          title="Packing List & Adaptive Reminders"
+          title="Packing List & Reminders"
           why="Students already check their calendar and the weather, but it’s hard to account for everything a full day brings. Our users said an outfit that works in the morning still often leaves them wishing they’d packed an extra layer or a different item later."
           how={
             <ul className="list-disc pl-5 space-y-2">
               <li>After choosing an outfit, users see a packing list, each with a brief reason.</li>
-              <li>Reposet sends adaptive reminders before key transitions.</li>
+              <li>Reposet sends reminders before key transitions.</li>
               <li>As packing extras can add weight, bulk, or affect how an outfit looks, a quick feedback form captures these trade-offs. This helps the system learn what actually felt worth bringing and refine future packing lists and reminders.</li>
             </ul>
           }
@@ -480,7 +480,7 @@ const ReposetDetailSection: React.FC = () => {
             <ul className="list-disc pl-5 space-y-2">
               <li>While it adds a small step, this check-in helps determine which item is already worn today and enables behavioral reinforcement for outfit rotation. </li>
               <li>After getting dressed, users take a quick mirror photo to log what they wore.</li>
-              <li>The bear responds immediately: using not recently worn items raises the battery and earns rotation points, while repeats or skipping check-in lower them. If the battery drops too low, personalized suggestions pause until an underused item is restyled.</li>
+              <li>The bear responds immediately: using not recently worn items raises the battery and earns rotation points, while repeats or skipping check-in lower them. If the battery drops too low, personalized suggestions pause until a not recently worn item is restyled.</li>
             </ul>
           }
           videoSrc={`${import.meta.env.BASE_URL}/videos/checkin-with-bear.mp4`}
