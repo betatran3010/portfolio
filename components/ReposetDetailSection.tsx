@@ -352,8 +352,8 @@ const ReposetDetailSection: React.FC = () => {
                   {row.detail}
                 </div>
                 <div className={`p-8 bg-white text-stone-600 ${i !== arr.length - 1 ? 'border-b border-yellow-100' : ''}`}>
-                   {/* Mobile Header 2 */}
-                   <div className="md:hidden font-black text-orange-600 uppercase text-xs tracking-wider mb-2">
+                  {/* Mobile Header 2 */}
+                  <div className="md:hidden font-black text-orange-600 uppercase text-xs tracking-wider mb-2">
                     Design Opportunity
                   </div>
                   {row.opp}
@@ -416,8 +416,7 @@ const ReposetDetailSection: React.FC = () => {
           <div className="inline-block bg-green-100 text-green-700 font-black px-4 py-1 rounded-full mb-4">Final Solution</div>
           <h2 className="text-4xl md:text-5xl font-heading font-black text-amber-900 mb-6">Reposet</h2>
           <p className="text-xl text-stone-600 max-w-4xl mx-auto font-medium leading-relaxed">
-            Reposet combines context-aware outfit planning, physical–digital closet visibility, and a lightweight reward system to support intentional dressing.
-          </p>
+            Reposet combines context-aware outfit planning, physical-digital closet visibility, and a lightweight reward system to support intentional dressing. It surfaces a small set of outfit options based on schedule and weather, helps users quickly locate items in their real closet, and encourages rotation through gentle feedback, a mascot companion, and progress-based rewards. Occasional prompts keep the system aligned with users’ evolving wardrobes, bringing overlooked clothes back into use with minimal effort.          </p>
         </div>
 
         {/* Feature 1: Context-Aware */}
