@@ -501,7 +501,7 @@ const ReposetDetailSection: React.FC = () => {
           }
           hasComparison={true}
           iterationNote="Iteration from heuristic evaluation & usability testing"
-          iterationTitle="Bulk vs. Single Upload"
+          iterationTitle="Upload Flow Redesign"
           beforeText="Update prompts forced users into updating without a clear way to postpone. Wardrobe updates relied on a rigid, bulk upload flow. While some users appreciated the efficiency of capturing many items together, others found it quite effortful as it requires space, time, and taking out a portion of their closet. Instructional screens repeated every time, not suitable for advanced users. Example category cards looked clickable but weren’t."
           afterText="Update prompts allow postponement. Supports both single-item quick adds and bulk uploads, with multiple photos in either path. Instructions can be skipped by returning users. Example categories no longer appear clickable."
           beforeVideoSrc={`${import.meta.env.BASE_URL}/videos/update1.mp4`}
