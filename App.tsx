@@ -22,7 +22,28 @@ const projects: Project[] = [
     team: "1 Professor, 1 PhD student, 5 undergraduate students",
     duration: "Feb 2025–present",
     tools: ["Figma", "ATLAS.ti", "R", "Qualtrics"],
-    contextOverview: "XPLAIN is a long-running HCI research project with Professor Susan Fussell examining how proactive AI content prediction and generation can support non-native speakers in real-time video meetings. I contributed to the design, prototyping, and evaluation of XPLAIN across multiple Wizard-of-Oz studies, spanning literature review, conversational scenario design, interface design and prototyping, survey development, user studies, and data analysis.",
+    contextOverview: (
+      <>
+        <p>
+          XPLAIN is a long-running HCI research project with Professor Susan Fussell examining how proactive AI content prediction and generation can support non-native speakers in real-time video meetings. I contributed to the design, prototyping, and evaluation of XPLAIN across multiple Wizard-of-Oz studies, spanning literature review, conversational scenario design, interface design and prototyping, survey development, user studies, and data analysis.
+        </p>
+
+        <p className="mt-4">
+          <span className="text-ink font-bold">
+            This project is mentioned in this paper:
+          </span>{" "}
+          <a
+            href="https://dl.acm.org/doi/10.1145/3715070.3749273"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary underline hover:text-primary-dark"
+          >
+            https://dl.acm.org/doi/10.1145/3715070.3749273
+          </a>{" "}
+          <span className="text-ink font-bold">(CSCW Companion ’25)</span>
+        </p>
+      </>
+    ),
   },
   {
     id: 2,

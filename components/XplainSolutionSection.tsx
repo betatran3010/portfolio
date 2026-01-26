@@ -345,6 +345,23 @@ const XplainSolutionSection: React.FC = () => {
             </ul>
           </div>
 
+          <div className="bg-primary/10 border-l-4 border-primary/50 p-4 rounded-r-xl mb-6">
+            <p className="text-ink text-base md:text-lg leading-relaxed">
+              <span className="text-ink font-bold">
+                This study is mentioned in this paper:
+              </span>{" "}
+              <a
+                href="https://dl.acm.org/doi/10.1145/3715070.3749273"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline hover:text-primary-dark"
+              >
+                https://dl.acm.org/doi/10.1145/3715070.3749273
+              </a>{" "}
+              <span className="text-ink font-semibold">(CSCW Companion ’25)</span>
+            </p>
+          </div>
+
         </div>
       </section>
 
