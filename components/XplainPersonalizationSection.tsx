@@ -1,22 +1,98 @@
 
 import React from 'react';
-import { 
-  Filter, 
-  Search, 
-  Layout, 
-  Monitor, 
-  ClipboardCheck, 
-  MessageSquare, 
-  BookOpen, 
-  Eye, 
-  FileText, 
-  Activity, 
-  ArrowRight, 
-  XCircle,
-  Users
+import {
+  Goal,
+  Search,
+  Layout,
+  Monitor,
+  ClipboardCheck,
+  MessageSquare,
+  BookOpen,
+  Eye,
+  FileText,
+  Activity,
+  ArrowRight,
+  Users,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
+type CarouselItem = {
+  img: string;
+  label: string;
+};
+
+const ImageCarousel: React.FC<{ items: CarouselItem[] }> = ({ items }) => {
+  const [current, setCurrent] = React.useState(0);
+
+  return (
+    <div className="mt-8 flex flex-col items-center gap-4">
+      <div className="flex items-center gap-4 w-full max-w-4xl">
+
+        {/* Left Arrow */}
+        <button
+          onClick={() =>
+            setCurrent((current - 1 + items.length) % items.length)
+          }
+          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+
+        {/* Image */}
+        <div className="w-full">
+          <img
+            src={items[current].img}
+            alt={items[current].label}
+            className="w-full h-auto rounded-xl border border-slate-200 shadow-sm"
+          />
+        </div>
+
+        {/* Right Arrow */}
+        <button
+          onClick={() =>
+            setCurrent((current + 1) % items.length)
+          }
+          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="flex gap-2 mt-2">
+        {items.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2.5 h-2.5 rounded-full ${i === current ? "bg-primary" : "bg-slate-300"
+              }`}
+          />
+        ))}
+      </div>
+
+      {/* Label */}
+      <p className="text-sm font-bold text-ink-light text-center">
+        {items[current].label}
+      </p>
+    </div>
+  );
+};
+
+const proficiencyClarificationImages = [
+  { label: "Low Proficiency Clarification", img: `${import.meta.env.BASE_URL}images/low-clarification.png` },
+  { label: "Medium Proficiency Clarification", img: `${import.meta.env.BASE_URL}images/medium-clarification.png` },
+  { label: "High Proficiency Clarification", img: `${import.meta.env.BASE_URL}images/high-clarification.png` }
+];
+
+const proficiencySuggestionImages = [
+  { img: `${import.meta.env.BASE_URL}images/low-suggestion.png`, label: "Low Proficiency Suggestion" },
+  { img: `${import.meta.env.BASE_URL}images/medium-suggestion.png`, label: "Medium Proficiency Suggestion" },
+  { img: `${import.meta.env.BASE_URL}images/high-suggestion.png`, label: "High Proficiency Suggestion" }
+];
+
 const XplainPersonalizationSection: React.FC = () => {
+
   return (
     <div className="space-y-20 animate-[fadeIn_0.5s_ease-out]">
       {/* Header */}
@@ -29,7 +105,7 @@ const XplainPersonalizationSection: React.FC = () => {
         <div className="space-y-6">
           <div className="flex items-center gap-3 border-b-2 border-slate-100 pb-4">
             <div className="p-2 bg-primary-light rounded-lg">
-              <Filter className="w-5 h-5 text-primary-dark" />
+              <Goal className="w-5 h-5 text-primary-dark" />
             </div>
             <h3 className="text-xl font-heading font-bold text-ink">Motivation & Study Goal</h3>
           </div>
@@ -74,21 +150,21 @@ const XplainPersonalizationSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm">
               <div className="text-xs font-black text-primary uppercase tracking-widest mb-3">Low Proficiency</div>
-              <ul className="space-y-2 text-base text-ink-light font-medium list-disc pl-4 marker:text-primary">
+              <ul className="space-y-2 text-base text-ink-light list-disc pl-4 marker:text-primary">
                 <li>Shorter turns, explicit framing of questions</li>
                 <li>Topics introduced with concrete examples</li>
               </ul>
             </div>
             <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm">
               <div className="text-xs font-black text-primary uppercase tracking-widest mb-3">Medium Proficiency</div>
-              <ul className="space-y-2 text-base text-ink-light font-medium list-disc pl-4 marker:text-primary">
+              <ul className="space-y-2 text-base text-ink-light list-disc pl-4 marker:text-primary">
                 <li>Moderately complex discourse</li>
                 <li>Balanced abstract + concrete framing</li>
               </ul>
             </div>
             <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm">
               <div className="text-xs font-black text-primary uppercase tracking-widest mb-3">High Proficiency</div>
-              <ul className="space-y-2 text-base text-ink-light font-medium list-disc pl-4 marker:text-primary">
+              <ul className="space-y-2 text-base text-ink-light list-disc pl-4 marker:text-primary">
                 <li>Conceptually dense, abstract framing</li>
                 <li>Longer turns, implicit structure</li>
                 <li>Assumes strong linguistic competence</li>
@@ -153,21 +229,8 @@ const XplainPersonalizationSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Visuals - Stacked */}
-          <div className="flex flex-col gap-8 mt-6">
-            {[
-              { label: "Low Proficiency Clarification", img: `${import.meta.env.BASE_URL}images/low-clarification.png` },
-              { label: "Medium Proficiency Clarification", img: `${import.meta.env.BASE_URL}images/medium-clarification.png` },
-              { label: "High Proficiency Clarification", img: `${import.meta.env.BASE_URL}images/high-clarification.png` }
-            ].map((item, i) => (
-              <div key={i} className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-                <img src={item.img} alt={`${item.label} Example`} className="w-full h-auto object-cover" />
-                <div className="p-4 bg-white text-sm border-t border-slate-100">
-                  <span className="font-bold text-ink block mb-1">{item.label}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Visuals */}
+          <ImageCarousel items={proficiencyClarificationImages} />
         </div>
 
         {/* Feature Design: Suggestions */}
@@ -180,7 +243,7 @@ const XplainPersonalizationSection: React.FC = () => {
             <div className="space-y-3">
               <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm h-full">
                 <div className="text-xs font-black text-primary uppercase tracking-widest mb-3">Low Proficiency</div>
-                <ul className="space-y-2 text-base text-ink-light font-medium list-disc pl-4 marker:text-primary">
+                <ul className="space-y-2 text-base text-ink-light list-disc pl-4 marker:text-primary">
                   <li>Idea-level + sentence-level</li>
                   <li>Explicit agree/disagree framing to lower production pressure and sentence construction effort</li>
                 </ul>
@@ -190,7 +253,7 @@ const XplainPersonalizationSection: React.FC = () => {
             <div className="space-y-3">
               <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm h-full">
                 <div className="text-xs font-black text-primary uppercase tracking-widest mb-3">Medium Proficiency</div>
-                <ul className="space-y-2 text-base text-ink-light font-medium list-disc pl-4 marker:text-primary">
+                <ul className="space-y-2 text-base text-ink-light list-disc pl-4 marker:text-primary">
                   <li>Hybrid support that blends idea-level guidance with sentence-level clarity</li>
                   <li>Suggestions are written as complete sentences, but express ideas rather than ready-made responses</li>
                   <li>Designed to support comprehension and response planning while still requiring users to formulate their own wording</li>
@@ -201,7 +264,7 @@ const XplainPersonalizationSection: React.FC = () => {
             <div className="space-y-3">
               <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm h-full">
                 <div className="text-xs font-black text-primary uppercase tracking-widest mb-3">High Proficiency</div>
-                <ul className="space-y-2 text-base text-ink-light font-medium list-disc pl-4 marker:text-primary">
+                <ul className="space-y-2 text-base text-ink-light list-disc pl-4 marker:text-primary">
                   <li>Uses compact, abstract, conceptual descriptors</li>
                   <li>Avoids examples or full language to preserve user agency and reduce reading time</li>
                 </ul>
@@ -215,21 +278,8 @@ const XplainPersonalizationSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Visuals - Stacked */}
-          <div className="flex flex-col gap-8">
-            {[
-              { label: "Low Proficiency Suggestion", img: `${import.meta.env.BASE_URL}images/low-suggestion.png` },
-              { label: "Medium Proficiency Suggestion", img: `${import.meta.env.BASE_URL}images/medium-suggestion.png` },
-              { label: "High Proficiency Suggestion", img: `${import.meta.env.BASE_URL}images/high-suggestion.png` }
-            ].map((item, i) => (
-              <div key={i} className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-                <img src={item.img} alt={`${item.label} Example`} className="w-full h-auto object-cover" />
-                <div className="p-4 bg-white text-sm border-t border-slate-100">
-                  <span className="font-bold text-ink block mb-1">{item.label}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Visuals */}
+          <ImageCarousel items={proficiencySuggestionImages} />
         </div>
 
         {/* Feature Design: Summaries */}
@@ -240,25 +290,8 @@ const XplainPersonalizationSection: React.FC = () => {
             </h4>
 
             <p className="text-ink-light mb-6 text-lg">
-              We did not observe meaningful proficiency differences for summaries. However, a key baseline finding was:
+              Summaries showed no clear proficiency differences, but baseline findings revealed they were often ignored mid-conversation due to time pressure.
             </p>
-
-            {/* Red Box: Trade-offs */}
-            <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-6 md:p-8">
-              <h4 className="text-lg font-bold text-red-900 mb-4 flex items-center gap-2">
-                <XCircle className="w-6 h-6 text-red-600" /> Trade-offs & Limitations
-              </h4>
-              <ul className="space-y-3">
-                {[
-                  "Real-time summaries were often ignored as users lacked time to read them during ongoing conversations."
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-3 text-red-900 font-medium leading-snug text-lg">
-                    <span className="block w-1.5 h-1.5 mt-2.5 bg-red-400 rounded-full shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             <div className="bg-primary/10 border-l-4 border-primary/50 p-6 rounded-r-xl mb-6 mt-8">
               <p className="text-ink text-lg leading-relaxed">
@@ -267,11 +300,15 @@ const XplainPersonalizationSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-            <img src={`${import.meta.env.BASE_URL}images/all-summary.png`} alt="Iterated Summary Design" className="w-full h-full object-cover" />
-            <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
+          <div className="flex flex-col items-center gap-3">
+            <img
+              src={`${import.meta.env.BASE_URL}images/all-summary.png`}
+              alt="Iterated Summary Design"
+              className="w-full max-w-3xl h-auto rounded-xl border border-slate-200 shadow-sm"
+            />
+            <p className="text-sm font-bold text-ink-light text-center">
               Iterated Summary Design
-            </div>
+            </p>
           </div>
         </div>
       </section>
@@ -318,7 +355,7 @@ const XplainPersonalizationSection: React.FC = () => {
           </div>
         </div>
 
-        <p className="text-ink-light mb-6 font-medium text-lg">
+        <p className="text-ink-light mb-6 text-lg">
           I ran <span className="text-ink font-bold">11 user studies</span> for this study.
         </p>
 

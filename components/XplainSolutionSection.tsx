@@ -1,6 +1,83 @@
 
 import React from 'react';
-import { Sparkles, FileText, Activity, Eye, MousePointer, GitBranch, Search, CheckCircle2, XCircle, AlertCircle, ScanFace } from 'lucide-react';
+import { Sparkles, FileText, Activity, Eye, MousePointer, Speech, Search, CheckCircle2, XCircle, AlertCircle, ScanFace, ChevronLeft, ChevronRight } from 'lucide-react';
+
+type CarouselItem = {
+  img: string;
+  label: string;
+};
+
+const ImageCarousel: React.FC<{ items: CarouselItem[] }> = ({ items }) => {
+  const [current, setCurrent] = React.useState(0);
+
+  return (
+    <div className="mt-8 flex flex-col items-center gap-4">
+      <div className="flex items-center gap-4 w-full max-w-4xl">
+
+        {/* Left Arrow */}
+        <button
+          onClick={() =>
+            setCurrent((current - 1 + items.length) % items.length)
+          }
+          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+
+        {/* Image */}
+        <div className="w-full">
+          <img
+            src={items[current].img}
+            alt={items[current].label}
+            className="w-full h-auto rounded-xl border border-slate-200 shadow-sm"
+          />
+        </div>
+
+        {/* Right Arrow */}
+        <button
+          onClick={() =>
+            setCurrent((current + 1) % items.length)
+          }
+          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="flex gap-2 mt-2">
+        {items.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2.5 h-2.5 rounded-full ${i === current ? "bg-primary" : "bg-slate-300"
+              }`}
+          />
+        ))}
+      </div>
+
+      {/* Label */}
+      <p className="text-sm font-bold text-ink-light text-center">
+        {items[current].label}
+      </p>
+    </div>
+  );
+};
+
+const clarificationImages = [
+  { img: `${import.meta.env.BASE_URL}images/clarifications.png`, label: "First encounter with an unfamiliar term" },
+  { img: `${import.meta.env.BASE_URL}images/expanded-clarifications.png`, label: "Revisiting a prior clarification" }
+];
+
+const suggestionImages = [
+  { img: `${import.meta.env.BASE_URL}images/idea-suggestions.png`, label: "Idea-level suggestion" },
+  { img: `${import.meta.env.BASE_URL}images/sentence-suggestions.png`, label: "Sentence-level suggestion (with bidirectional framing to avoid biasing user opinions in agreeing/disagreeing questions)" }
+];
+
+const summaryImages = [
+  { img: `${import.meta.env.BASE_URL}images/topic-summary.png`, label: "Topic-shift summary" },
+  { img: `${import.meta.env.BASE_URL}images/meeting-summary.png`, label: "End-of-meeting summary" }
+];
 
 const XplainSolutionSection: React.FC = () => {
   return (
@@ -36,20 +113,9 @@ const XplainSolutionSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Visuals - Stacked */}
-          <div className="flex flex-col gap-8">
-            <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src={`${import.meta.env.BASE_URL}images/clarifications.png`} alt="First encounter with an unfamiliar term" className="w-full h-full object-cover" />
-              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
-                First encounter with an unfamiliar term
-              </div>
-            </div>
-            <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src={`${import.meta.env.BASE_URL}images/expanded-clarifications.png`} alt="Revisiting a prior clarification" className="w-full h-full object-cover" />              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
-                Revisiting a prior clarification
-              </div>
-            </div>
-          </div>
+          {/* Visuals */}
+          <ImageCarousel items={clarificationImages} />
+
         </div>
 
         {/* Feature 2: Suggestions */}
@@ -63,21 +129,8 @@ const XplainSolutionSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Visuals - Stacked */}
-          <div className="flex flex-col gap-8">
-            <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src={`${import.meta.env.BASE_URL}images/idea-suggestions.png`} alt="Idea-level suggestion" className="w-full h-full object-cover" />
-              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
-                Idea-level suggestion
-              </div>
-            </div>
-            <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src={`${import.meta.env.BASE_URL}images/sentence-suggestions.png`} alt="Sentence-level suggestion" className="w-full h-full object-cover" />
-              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
-                Sentence-level suggestion (with bidirectional framing to avoid biasing user opinions in agreeing/disagreeing questions)
-              </div>
-            </div>
-          </div>
+          {/* Visuals */}
+          <ImageCarousel items={suggestionImages} />
         </div>
 
         {/* Feature 3: Summaries */}
@@ -92,20 +145,7 @@ const XplainSolutionSection: React.FC = () => {
           </div>
 
           {/* Visuals - Stacked */}
-          <div className="flex flex-col gap-8">
-            <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src={`${import.meta.env.BASE_URL}images/topic-summary.png`} alt="Topic-shift summary" className="w-full h-full object-cover" />
-              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
-                Topic-shift summary
-              </div>
-            </div>
-            <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-              <img src={`${import.meta.env.BASE_URL}images/meeting-summary.png`} alt="End-of-meeting summary" className="w-full h-full object-cover" />
-              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
-                End-of-meeting summary
-              </div>
-            </div>
-          </div>
+          <ImageCarousel items={summaryImages} />
         </div>
       </section>
 
@@ -121,7 +161,7 @@ const XplainSolutionSection: React.FC = () => {
         {/* Disfluency Coding */}
         <div className="bg-paper border-2 border-slate-100 rounded-3xl p-6 md:p-8">
           <h4 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
-            <GitBranch className="w-5 h-5 text-primary" /> Disfluency Coding
+            <Speech className="w-5 h-5 text-primary" /> Disfluency Coding
           </h4>
           <p className="text-ink-light mb-8 text-lg">
             I analyzed disfluencies to examine how proactive support influenced speech production. Each instance was annotated at the sentence/phrase level with its timing, duration, and associated feature context, followed by a brief interpretive note and then binary coding of disfluency types (see diagram). Coding was validated with a second coder.
@@ -159,7 +199,7 @@ const XplainSolutionSection: React.FC = () => {
                         {/* Restart Branch */}
                         <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
                           <div className="font-bold text-ink mb-2">Restart</div>
-                          <div className="flex items-center gap-2 text-slate-500 font-medium text-xs">
+                          <div className="flex items-center gap-2 text-slate-500 text-xs">
                             <span className="text-slate-300">↳</span> Reformulation
                           </div>
                         </div>
@@ -167,7 +207,7 @@ const XplainSolutionSection: React.FC = () => {
                         {/* Repetition Branch */}
                         <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
                           <div className="font-bold text-ink mb-2">Repetition</div>
-                          <div className="space-y-1 text-slate-500 font-medium text-xs">
+                          <div className="space-y-1 text-slate-500 text-xs">
                             <div className="flex items-center gap-2"><span className="text-slate-300">↳</span> Exact repeat</div>
                             <div className="flex items-center gap-2"><span className="text-slate-300">↳</span> Partial repeat</div>
                           </div>
@@ -295,7 +335,7 @@ const XplainSolutionSection: React.FC = () => {
                 "Users reported large efficiency gains over pausing or multitasking with web searching.",
                 "Images are helpful."
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 text-green-800 font-medium leading-snug">
+                <li key={i} className="flex gap-3 text-green-800 leading-snug">
                   <span className="block w-1.5 h-1.5 mt-2 bg-green-400 rounded-full shrink-0" />
                   {item}
                 </li>
@@ -316,7 +356,7 @@ const XplainSolutionSection: React.FC = () => {
                 "Real-time summaries were often ignored as users lacked time to read them during ongoing conversations.",
                 "Second language anxiety, proficiency, and communication style affected whether users tolerated or avoided disfluency-inducing features."
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 text-red-900 font-medium leading-snug">
+                <li key={i} className="flex gap-3 text-red-900 leading-snug">
                   <span className="block w-1.5 h-1.5 mt-2 bg-red-400 rounded-full shrink-0" />
                   {item}
                 </li>
@@ -337,7 +377,7 @@ const XplainSolutionSection: React.FC = () => {
                 "Delay suggestions (~3-5s after questions) or offer multi-option, confidence-tagged outputs to preserve user agency.",
                 "Deliver explanatory content in L1 (native language) to reduce parsing cost, and producible content in L2 (second language) to support fluent uptake."
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 text-amber-900 font-medium leading-snug">
+                <li key={i} className="flex gap-3 text-amber-900 leading-snug">
                   <span className="block w-1.5 h-1.5 mt-2 bg-amber-400 rounded-full shrink-0" />
                   {item}
                 </li>

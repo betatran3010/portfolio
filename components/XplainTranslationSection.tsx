@@ -16,9 +16,83 @@ import {
   BookOpen,
   Eye,
   Activity,
-  ArrowDown,
-  Lightbulb
+  Lightbulb,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
+
+type CarouselItem = {
+  img: string;
+  label: string;
+};
+
+const VideoCarousel: React.FC<{ items: CarouselItem[] }> = ({ items }) => {
+  const [current, setCurrent] = React.useState(0);
+
+  return (
+    <div className="mt-8 flex flex-col items-center gap-4">
+      <div className="flex items-center gap-4 w-full max-w-4xl">
+
+        {/* Left Arrow */}
+        <button
+          onClick={() => setCurrent((current - 1 + items.length) % items.length)}
+          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+
+        {/* Video */}
+        <div className="w-full bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
+          <video
+            key={items[current].src}   // forces reload when switching
+            src={items[current].src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
+        {/* Right Arrow */}
+        <button
+          onClick={() => setCurrent((current + 1) % items.length)}
+          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="flex gap-2 mt-2">
+        {items.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2.5 h-2.5 rounded-full ${i === current ? "bg-primary" : "bg-slate-300"
+              }`}
+          />
+        ))}
+      </div>
+
+      {/* Label */}
+      <p className="text-sm font-bold text-ink-light text-center">
+        {items[current].label}
+      </p>
+    </div>
+  );
+};
+
+const videoItems = [
+  {
+    src: `${import.meta.env.BASE_URL}videos/language-switching.mp4`,
+    label: "Language-switching interaction",
+  },
+  {
+    src: `${import.meta.env.BASE_URL}videos/translation-conversation.mp4`,
+    label: "The conversation with embedded clarifications and counterbalanced items",
+  },
+];
 
 const XplainTranslationSection: React.FC = () => {
   return (
@@ -79,7 +153,7 @@ const XplainTranslationSection: React.FC = () => {
                   <Globe className="w-6 h-6 text-primary shrink-0" />
                   <div>
                     <span className="font-bold text-ink block text-sm uppercase tracking-wide mb-1">Domain Specificity</span>
-                    <ul className="space-y-2 text-lg text-ink-light font-medium list-disc pl-6 marker:text-primary">
+                    <ul className="space-y-2 text-lg text-ink-light list-disc pl-6 marker:text-primary">
                       <li><span className="text-ink font-bold">High-domain language:</span> Technical, specialized terminology requiring domain expertise for full comprehension and application</li>
                       <li><span className="text-ink font-bold">Low-domain language:</span> Descriptive, academic, or everyday vocabulary not requiring specialized domain knowledge</li>
                     </ul>
@@ -89,7 +163,7 @@ const XplainTranslationSection: React.FC = () => {
                   <Brain className="w-6 h-6 text-primary shrink-0" />
                   <div>
                     <span className="font-bold text-ink block text-sm uppercase tracking-wide mb-1">Processing Context</span>
-                    <ul className="space-y-2 text-lg text-ink-light font-medium list-disc pl-6 marker:text-primary">
+                    <ul className="space-y-2 text-lg text-ink-light list-disc pl-6 marker:text-primary">
                       <li><span className="text-ink font-bold">Comprehension:</span> Processing and understanding incoming speech</li>
                       <li><span className="text-ink font-bold">Production:</span> Preparing and delivering responses under time pressure</li>
                     </ul>
@@ -101,7 +175,7 @@ const XplainTranslationSection: React.FC = () => {
                 These dimensions matter as:
               </p>
 
-              <ul className="space-y-2 text-lg text-ink-light font-medium list-disc pl-6 marker:text-primary">
+              <ul className="space-y-2 text-lg text-ink-light list-disc pl-6 marker:text-primary">
                 <li>Technical concepts may be more strongly represented in one language than another</li>
                 <li>Comprehension allows time to integrate information, while Production requires immediate transformation into speech</li>
               </ul>
@@ -178,7 +252,7 @@ const XplainTranslationSection: React.FC = () => {
             <h4 className="font-bold text-ink text-lg flex items-center gap-2">
               <Clock className="w-5 h-5 text-primary" /> Key Constraints
             </h4>
-            <ul className="space-y-4 text-lg text-ink-light font-medium list-disc pl-6 marker:text-primary">
+            <ul className="space-y-4 text-lg text-ink-light list-disc pl-6 marker:text-primary">
               <li>Participants: Chinese–English bilinguals.</li>
               <li>Conceptual L1/L2 familiarity was excluded due to high subjectivity and individual variability (lexical L2 familiarity was retained, as clarifications are designed to support access to unfamiliar L2 terms).</li>
               <li>12 clarification events per participant (1 per condition).</li>
@@ -265,7 +339,7 @@ const XplainTranslationSection: React.FC = () => {
             We chose a dietitian visit as  it naturally integrates:
           </p>
 
-          <ul className="space-y-3 text-lg text-ink-light font-medium list-disc pl-6 marker:text-primary mb-10">
+          <ul className="space-y-3 text-lg text-ink-light list-disc pl-6 marker:text-primary mb-10">
             <li><span className="text-ink font-bold">High-Domain</span> (medical, diet terminology) and <span className="text-ink font-bold">low-domain</span> (non-technical) terms</li>
             <li><span className="text-ink font-bold">Comprehension</span> (listening to explanations) and <span className="text-ink font-bold">Production</span> (responding and describing habits, conditions, etc.)</li>
             <li><span className="text-ink font-bold">Realistic time pressure</span> without requiring specialized prior knowledge.</li>
@@ -366,34 +440,7 @@ const XplainTranslationSection: React.FC = () => {
           </div>
 
           {/* Videos */}
-          <div className="flex flex-col gap-8 w-full">
-            <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200 w-full">
-              <video
-                src={`${import.meta.env.BASE_URL}videos/language-switching.mp4`}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto object-cover"
-              />
-              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
-                Language-switching interaction
-              </div>
-            </div>
-            <div className="bg-slate-100 rounded-xl overflow-hidden border border-slate-200 w-full">
-              <video
-                src={`${import.meta.env.BASE_URL}videos/translation-conversation.mp4`}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto object-cover"
-              />
-              <div className="p-4 bg-white text-sm font-bold text-ink-light border-t border-slate-100">
-                The conversation with embedded clarifications and counterbalanced items
-              </div>
-            </div>
-          </div>
+          <VideoCarousel items={videoItems} />
         </div>
       </section>
 
@@ -497,7 +544,7 @@ const XplainTranslationSection: React.FC = () => {
           </div>
         </div>
 
-        <p className="text-ink-light font-medium">I have run <span className="font-bold text-ink">4 user studies</span> for this assignment.</p>
+        <p className="text-ink-light">I have run <span className="font-bold text-ink">4 user studies</span> for this assignment.</p>
 
         {/* Note: Ongoing Data Analysis (Dashed Style) */}
         <div className="mt-8 border-2 border-dashed border-slate-300 bg-slate-50 p-6 md:p-8 rounded-3xl flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
