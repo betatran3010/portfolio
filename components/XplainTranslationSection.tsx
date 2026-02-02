@@ -30,58 +30,90 @@ const VideoCarousel: React.FC<{ items: CarouselItem[] }> = ({ items }) => {
   const [current, setCurrent] = React.useState(0);
 
   return (
-    <div className="mt-8 flex flex-col items-center gap-4">
-      <div className="flex items-center gap-4 w-full max-w-4xl">
+    <div className="mt-8">
 
-        {/* Left Arrow */}
-        <button
-          onClick={() => setCurrent((current - 1 + items.length) % items.length)}
-          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-
-        {/* Video */}
-        <div className="w-full bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
-          <video
-            key={items[current].src}   // forces reload when switching
-            src={items[current].src}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-auto object-cover"
-          />
-        </div>
-
-        {/* Right Arrow */}
-        <button
-          onClick={() => setCurrent((current + 1) % items.length)}
-          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
-
-      {/* Dots */}
-      <div className="flex gap-2 mt-2">
-        {items.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-2.5 h-2.5 rounded-full ${i === current ? "bg-primary" : "bg-slate-300"
-              }`}
-          />
+      {/* ---------- MOBILE: STACKED ---------- */}
+      <div className="flex flex-col gap-6 md:hidden">
+        {items.map((item, i) => (
+          <div key={i} className="flex flex-col items-center gap-3">
+            <div className="w-full bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
+              <video
+                src={item.src}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <p className="text-sm font-bold text-ink-light text-center">
+              {item.label}
+            </p>
+          </div>
         ))}
       </div>
 
-      {/* Label */}
-      <p className="text-sm font-bold text-ink-light text-center">
-        {items[current].label}
-      </p>
+      {/* ---------- DESKTOP: CAROUSEL ---------- */}
+      <div className="hidden md:flex flex-col items-center gap-4">
+        <div className="flex items-center gap-4 w-full max-w-4xl md:max-w-5xl lg:max-w-6xl">
+
+          {/* Left Arrow */}
+          <button
+            onClick={() =>
+              setCurrent((current - 1 + items.length) % items.length)
+            }
+            className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Video */}
+          <div className="w-full bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
+            <video
+              key={items[current].src}   // forces reload when switching
+              src={items[current].src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto object-cover"
+            />
+          </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={() =>
+              setCurrent((current + 1) % items.length)
+            }
+            className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="flex gap-2 mt-2">
+          {items.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2.5 h-2.5 rounded-full ${
+                i === current ? "bg-primary" : "bg-slate-300"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Label */}
+        <p className="text-sm font-bold text-ink-light text-center">
+          {items[current].label}
+        </p>
+      </div>
+
     </div>
   );
 };
+
 
 const videoItems = [
   {

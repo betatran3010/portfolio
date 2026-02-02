@@ -11,58 +11,82 @@ const ImageCarousel: React.FC<{ items: CarouselItem[] }> = ({ items }) => {
   const [current, setCurrent] = React.useState(0);
 
   return (
-    <div className="mt-8 flex flex-col items-center gap-4">
-      <div className="flex items-center gap-4 w-full max-w-4xl">
+    <div className="mt-8">
 
-        {/* Left Arrow */}
-        <button
-          onClick={() =>
-            setCurrent((current - 1 + items.length) % items.length)
-          }
-          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-
-        {/* Image */}
-        <div className="w-full">
-          <img
-            src={items[current].img}
-            alt={items[current].label}
-            className="w-full h-auto rounded-xl border border-slate-200 shadow-sm"
-          />
-        </div>
-
-        {/* Right Arrow */}
-        <button
-          onClick={() =>
-            setCurrent((current + 1) % items.length)
-          }
-          className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
-
-      {/* Dots */}
-      <div className="flex gap-2 mt-2">
-        {items.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-2.5 h-2.5 rounded-full ${i === current ? "bg-primary" : "bg-slate-300"
-              }`}
-          />
+      {/* ---------- MOBILE: STACKED ---------- */}
+      <div className="flex flex-col gap-6 md:hidden">
+        {items.map((item, i) => (
+          <div key={i} className="flex flex-col items-center gap-3">
+            <img
+              src={item.img}
+              alt={item.label}
+              className="w-full h-auto rounded-xl border border-slate-200 shadow-sm"
+            />
+            <p className="text-sm font-bold text-ink-light text-center">
+              {item.label}
+            </p>
+          </div>
         ))}
       </div>
 
-      {/* Label */}
-      <p className="text-sm font-bold text-ink-light text-center">
-        {items[current].label}
-      </p>
+      {/* ---------- DESKTOP: CAROUSEL ---------- */}
+      <div className="hidden md:flex flex-col items-center gap-4">
+
+        <div className="flex items-center gap-4 w-full max-w-4xl">
+
+          {/* Left Arrow */}
+          <button
+            onClick={() =>
+              setCurrent((current - 1 + items.length) % items.length)
+            }
+            className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Image */}
+          <div className="w-full">
+            <img
+              src={items[current].img}
+              alt={items[current].label}
+              className="w-full h-auto rounded-xl border border-slate-200 shadow-sm"
+            />
+          </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={() =>
+              setCurrent((current + 1) % items.length)
+            }
+            className="bg-white border border-primary/40 text-primary rounded-full p-2.5 shadow-sm"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="flex gap-2 mt-2">
+          {items.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2.5 h-2.5 rounded-full ${
+                i === current ? "bg-primary" : "bg-slate-300"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Label */}
+        <p className="text-sm font-bold text-ink-light text-center">
+          {items[current].label}
+        </p>
+      </div>
+
     </div>
   );
 };
+
 
 const clarificationImages = [
   { img: `${import.meta.env.BASE_URL}images/clarifications.png`, label: "First encounter with an unfamiliar term" },

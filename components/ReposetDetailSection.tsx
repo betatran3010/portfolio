@@ -420,9 +420,13 @@ const ReposetDetailSection: React.FC = () => {
           <h4 className="text-ink font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
             <Camera className="w-4 h-4" /> Some of My Design Brainstorming Sketches
           </h4>
-          <div className="grid grid-cols-3 gap-4 max-w-5xl mx-auto">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {[1, 2, 3, 4, 5, 6].map(i => (
-              <div key={i} className="aspect-rectangle bg-stone-100 rounded-2xl border-2 border-stone-200 overflow-hidden group">
+              <div
+                key={i}
+                className="aspect-rectangle bg-stone-100 rounded-2xl border-2 border-stone-200 overflow-hidden group"
+              >
                 <img
                   src={`${import.meta.env.BASE_URL}images/sketch${i}.png`}
                   alt={`Sketch ${i}`}
@@ -432,6 +436,7 @@ const ReposetDetailSection: React.FC = () => {
             ))}
           </div>
         </div>
+
 
         {/* Ideation Session */}
         <div>
