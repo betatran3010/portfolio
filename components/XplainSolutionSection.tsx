@@ -332,8 +332,8 @@ const XplainSolutionSection: React.FC = () => {
                 "Clarifications reduced backtracking and disruptive disfluencies by resolving comprehension and prediction gaps early.",
                 "Suggestions increased readiness to respond despite added hesitation.",
                 "Disfluencies often reflected active evaluation and integration of AI support, not conversational failure.",
-                "Users reported large efficiency gains over pausing or multitasking with web searching.",
-                "Images are helpful."
+                "Users reported 30%-80% efficiency boost over pausing or multitasking with web searching.",
+                "Images were perceived as especially efficient."
               ].map((item, i) => (
                 <li key={i} className="flex gap-3 text-green-800 leading-snug">
                   <span className="block w-1.5 h-1.5 mt-2 bg-green-400 rounded-full shrink-0" />
