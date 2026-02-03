@@ -11,7 +11,7 @@ const XplainProblemSection: React.FC = () => {
         <h2 className="text-2xl md:text-3xl font-heading font-black text-ink mb-3 flex items-center gap-3">
           <span className="text-primary">01.</span> Problem & Motivation
         </h2>
-        <p className="text-ink-light mb-6">
+        <p className="text-ink-light mb-6 text-base md:text-lg">
           Why computer-mediated real-time conversations are more demanding for non-native speakers, and why reactive support falls short.
         </p>
       </div>

@@ -112,7 +112,7 @@ const XplainSolutionSection: React.FC = () => {
         <h2 className="text-2xl md:text-3xl font-heading font-black text-ink mb-6 flex items-center gap-3">
           <span className="text-primary">02.</span> Baseline Study: Designing and Evaluating Proactive Support
         </h2>
-        <p className="text-ink-light mb-6 text-lg leading-relaxed">
+        <p className="text-ink-light mb-6 text-base md:text-lg leading-relaxed">
           We developed <span className="text-ink font-bold">XPLAIN</span>, a proactive AI system that supports non-native speakers in real-time video-conferencing by anticipating communication challenges and scaffolding interaction as it unfolds.
         </p>
       </div>
@@ -129,10 +129,10 @@ const XplainSolutionSection: React.FC = () => {
         {/* Feature 1: Clarifications */}
         <div className="space-y-6">
           <div>
-            <h4 className="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+            <h4 className="text-base md:text-lg font-bold text-ink mb-3 flex items-center gap-2">
               <span className="bg-ink text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">1</span> Clarifications
             </h4>
-            <p className="text-ink-light leading-relaxed mb-4 text-lg">
+            <p className="text-ink-light leading-relaxed mb-4 text-base md:text-lg">
               Grounded in psycholinguistic grounding theory, clarifications <span className="text-ink font-bold">address comprehension failures</span> that disrupt predictive processing and cascade into repairs and backtracking. They are brief (≤20 words), context-aware explanations that resolve lexical, cultural, or domain gaps at word onset, supporting early alignment.
             </p>
           </div>
@@ -145,10 +145,10 @@ const XplainSolutionSection: React.FC = () => {
         {/* Feature 2: Suggestions */}
         <div className="space-y-6">
           <div>
-            <h4 className="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+            <h4 className="text-base md:text-lg font-bold text-ink mb-3 flex items-center gap-2">
               <span className="bg-ink text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">2</span> Suggestions
             </h4>
-            <p className="text-ink-light leading-relaxed mb-4 text-lg">
+            <p className="text-ink-light leading-relaxed mb-4 text-base md:text-lg">
               Disfluencies often emerge during conceptualization and formulation under rapid production demands. Suggestions surface relevant ideas and sentence-level response structures when participants are prompted for input, pre-activating semantic and syntactic material to <span className="text-ink font-bold">support response planning</span>.
             </p>
           </div>
@@ -160,10 +160,10 @@ const XplainSolutionSection: React.FC = () => {
         {/* Feature 3: Summaries */}
         <div className="space-y-6">
           <div>
-            <h4 className="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+            <h4 className="text-base md:text-lg font-bold text-ink mb-3 flex items-center gap-2">
               <span className="bg-ink text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">3</span> Summaries
             </h4>
-            <p className="text-ink-light leading-relaxed mb-4 text-lg">
+            <p className="text-ink-light leading-relaxed mb-4 text-base md:text-lg">
               According to working memory accounts of dialogue processing, as discussions become dense or shift topics, working memory limits can impair alignment. Thus, summaries externalize key contextual information to <span className="text-ink font-bold">reduce memory demands</span> and <span className="text-ink font-bold">reinforce common ground</span> across turns.
             </p>
           </div>
@@ -184,10 +184,10 @@ const XplainSolutionSection: React.FC = () => {
 
         {/* Disfluency Coding */}
         <div className="bg-paper border-2 border-slate-100 rounded-3xl p-6 md:p-8">
-          <h4 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
+          <h4 className="text-base md:text-lg font-bold text-ink mb-4 flex items-center gap-2">
             <Speech className="w-5 h-5 text-primary" /> Disfluency Coding
           </h4>
-          <p className="text-ink-light mb-8 text-lg">
+          <p className="text-ink-light mb-8 text-base md:text-lg">
             I analyzed disfluencies to examine how proactive support influenced speech production. Each instance was annotated at the sentence/phrase level with its timing, duration, and associated feature context, followed by a brief interpretive note and then binary coding of disfluency types (see diagram). Coding was validated with a second coder.
           </p>
 
@@ -252,10 +252,10 @@ const XplainSolutionSection: React.FC = () => {
 
         {/* Visual Coding */}
         <div className="bg-paper border-2 border-slate-100 rounded-3xl p-6 md:p-8">
-          <h4 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
+          <h4 className="text-base md:text-lg font-bold text-ink mb-4 flex items-center gap-2">
             <Eye className="w-5 h-5 text-primary" /> Visual Coding
           </h4>
-          <p className="text-ink-light mb-8 text-lg">
+          <p className="text-ink-light mb-8 text-base md:text-lg">
             To contextualize coded disfluencies, I conducted parallel visual coding by analyzing interaction behaviors around the caption box and sidebar (the system’s two primary interaction areas). I then systematically interpreted the observed behaviors to differentiate disfluencies driven by content processing, response formulation, interface timing/design, or individual habits, with cross-coder validation.
           </p>
 
@@ -321,10 +321,10 @@ const XplainSolutionSection: React.FC = () => {
 
         {/* Data Analysis Contribution - Updated to "Normal" style */}
         <div className="bg-paper border-2 border-slate-100 rounded-3xl p-6 md:p-8">
-          <h4 className="text-lg font-bold text-ink mb-4 flex items-center gap-2">
+          <h4 className="text-base md:text-lg font-bold text-ink mb-4 flex items-center gap-2">
             <Search className="w-5 h-5 text-primary" /> Data Analysis
           </h4>
-          <p className="text-ink-light leading-relaxed mb-0 text-lg">
+          <p className="text-ink-light leading-relaxed mb-0 text-base md:text-lg">
             My contribution was on preprocessing and exploratory analysis of disfluency and survey data in <span className="text-ink font-bold">R</span>. I computed core speech disfluency measures: disfluency length, total duration and count per participant, start ratio (relative timing within a session), and the feature associated with each disfluency. I then cleaned survey data, merged it with behavioral data, visualized patterns, and ran preliminary correlations linking feature-specific disfluencies to perceived usefulness and effort.
           </p>
         </div>
@@ -339,7 +339,7 @@ const XplainSolutionSection: React.FC = () => {
           <h3 className="text-xl font-heading font-bold text-ink">Key Findings</h3>
         </div>
 
-        <p className="text-ink-light mb-6 text-lg">
+        <p className="text-ink-light mb-6 text-base md:text-lg">
           Combined with the thematic analyis of interview data from my labmates and my own behavioral and survey analysis, we extracted these key findings:
         </p>
 
@@ -347,7 +347,7 @@ const XplainSolutionSection: React.FC = () => {
 
           {/* Green Box: Worked Well */}
           <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-6 md:p-8">
-            <h4 className="text-lg font-bold text-green-900 mb-4 flex items-center gap-2">
+            <h4 className="text-base md:text-lg font-bold text-green-900 mb-4 flex items-center gap-2">
               <CheckCircle2 className="w-6 h-6 text-green-600" /> What Worked Well
             </h4>
             <ul className="space-y-3">
@@ -359,7 +359,7 @@ const XplainSolutionSection: React.FC = () => {
                 "Users reported 30%-80% efficiency boost over pausing or multitasking with web searching.",
                 "Images were perceived as especially efficient."
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 text-green-800 leading-snug">
+                <li key={i} className="flex gap-3 text-green-800 leading-snug text-base md:text-lg">
                   <span className="block w-1.5 h-1.5 mt-2 bg-green-400 rounded-full shrink-0" />
                   {item}
                 </li>
@@ -369,7 +369,7 @@ const XplainSolutionSection: React.FC = () => {
 
           {/* Red Box: Trade-offs */}
           <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-6 md:p-8">
-            <h4 className="text-lg font-bold text-red-900 mb-4 flex items-center gap-2">
+            <h4 className="text-base md:text-lg font-bold text-red-900 mb-4 flex items-center gap-2">
               <XCircle className="w-6 h-6 text-red-600" /> Trade-offs & Limitations
             </h4>
             <ul className="space-y-3">
@@ -380,7 +380,7 @@ const XplainSolutionSection: React.FC = () => {
                 "Real-time summaries were often ignored as users lacked time to read them during ongoing conversations.",
                 "Second language anxiety, proficiency, and communication style affected whether users tolerated or avoided disfluency-inducing features."
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 text-red-900 leading-snug">
+                <li key={i} className="flex gap-3 text-red-900 leading-snug text-base md:text-lg">
                   <span className="block w-1.5 h-1.5 mt-2 bg-red-400 rounded-full shrink-0" />
                   {item}
                 </li>
@@ -390,7 +390,7 @@ const XplainSolutionSection: React.FC = () => {
 
           {/* Yellow Box: Implications */}
           <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-6 md:p-8">
-            <h4 className="text-lg font-bold text-amber-900 mb-4 flex items-center gap-2">
+            <h4 className="text-base md:text-lg font-bold text-amber-900 mb-4 flex items-center gap-2">
               <AlertCircle className="w-6 h-6 text-amber-600" /> Design Implications
             </h4>
             <ul className="space-y-3">
@@ -401,7 +401,7 @@ const XplainSolutionSection: React.FC = () => {
                 "Delay suggestions (~3-5s after questions) or offer multi-option, confidence-tagged outputs to preserve user agency.",
                 "Deliver explanatory content in L1 (native language) to reduce parsing cost, and producible content in L2 (second language) to support fluent uptake."
               ].map((item, i) => (
-                <li key={i} className="flex gap-3 text-amber-900 leading-snug">
+                <li key={i} className="flex gap-3 text-amber-900 leading-snug text-base md:text-lg">
                   <span className="block w-1.5 h-1.5 mt-2 bg-amber-400 rounded-full shrink-0" />
                   {item}
                 </li>

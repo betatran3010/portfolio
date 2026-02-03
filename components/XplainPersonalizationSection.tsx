@@ -133,7 +133,7 @@ const XplainPersonalizationSection: React.FC = () => {
             <h3 className="text-xl font-heading font-bold text-ink">Motivation & Study Goal</h3>
           </div>
 
-          <p className="text-ink-light mb-6 text-lg">
+          <p className="text-ink-light mb-6 text-base md:text-lg">
             Baseline analyses revealed <span className="text-ink font-bold">proficiency-related differences</span> in clarification uptake, suggestion integration/reliance, and reading time and perceived usefulness of these features, motivating an investigation into <span className="text-ink font-bold">proficiency-aware</span> rather than uniform proactive support.
           </p>
 
@@ -165,8 +165,8 @@ const XplainPersonalizationSection: React.FC = () => {
 
         {/* Scenario Script */}
         <div>
-          <h4 className="text-lg font-bold text-ink mb-4">General Conversational Scenario</h4>
-          <p className="text-ink-light mb-6 text-lg">
+          <h4 className="text-base md:text-lg font-bold text-ink mb-4">General Conversational Scenario</h4>
+          <p className="text-ink-light mb-6 text-base md:text-lg">
             We chose <span className="text-ink font-bold">data privacy</span> as it involves abstract concepts, institutional language, and culturally specific terminology that vary widely across proficiency levels while still eliciting participants’ values and perspectives easily.
           </p>
 
@@ -195,7 +195,7 @@ const XplainPersonalizationSection: React.FC = () => {
             </div>
           </div>
 
-          <p className="text-ink-light mb-6 mt-8 text-lg">
+          <p className="text-ink-light mb-6 mt-8 text-base md:text-lg">
             While real conversations vary in difficulty regardless of proficiency, each script’s overall style was tuned to naturally support the clarification targets and suggestion needs that followed. Differences in framing, turn length, and conceptual density ensured that clarification and suggestion behaviors felt appropriate rather than forced.
           </p>
         </div>
@@ -204,10 +204,10 @@ const XplainPersonalizationSection: React.FC = () => {
         <div className="space-y-6">
           <div className="flex flex-col md:flex-row gap-6 md:items-start">
             <div className="flex-1">
-              <h4 className="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+              <h4 className="text-base md:text-lg font-bold text-ink mb-3 flex items-center gap-2">
                 <span className="bg-ink text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">1</span> Clarifications
               </h4>
-              <p className="text-ink-light mb-4 text-lg">
+              <p className="text-ink-light mb-4 text-base md:text-lg">
                 Clarifications spanned 5 categories—slang, initialism, idiom, complex word, and cultural reference—with 6 target terms per category across proficiency conditions. Initialisms and cultural references were held constant, as they primarily reflect cultural rather than proficiency knowledge. To preserve naturalism, all terms were validated as common in spoken English using the Corpus of Contemporary American English (COCA) and pre-tested with a separate participant group to ensure low prior familiarity relative to proficiency assessed by LEXTALE.
               </p>
 
@@ -258,7 +258,7 @@ const XplainPersonalizationSection: React.FC = () => {
 
         {/* Feature Design: Suggestions */}
         <div className="space-y-6">
-          <h4 className="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+          <h4 className="text-base md:text-lg font-bold text-ink mb-3 flex items-center gap-2">
             <span className="bg-ink text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">2</span> Suggestions
           </h4>
 
@@ -296,7 +296,7 @@ const XplainPersonalizationSection: React.FC = () => {
           </div>
 
           <div className="bg-primary/10 border-l-4 border-primary/50 p-6 rounded-r-xl mb-6">
-            <p className="text-ink text-lg leading-relaxed">
+            <p className="text-ink text-base md:text-lg leading-relaxed">
               <span className="font-bold">UI Change:</span> Replaced the original generic label “Sentence/Idea Suggestions” with the actual question being asked, helping users quickly orient and refer back to relevant prompts.
             </p>
           </div>
@@ -308,16 +308,16 @@ const XplainPersonalizationSection: React.FC = () => {
         {/* Feature Design: Summaries */}
         <div className="space-y-8">
           <div>
-            <h4 className="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+            <h4 className="text-base md:text-lg font-bold text-ink mb-3 flex items-center gap-2">
               <span className="bg-ink text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">3</span> Summaries
             </h4>
 
-            <p className="text-ink-light mb-6 text-lg">
+            <p className="text-ink-light mb-6 text-base md:text-lg">
               Summaries showed no clear proficiency differences, but baseline findings revealed they were often ignored mid-conversation due to time pressure.
             </p>
 
             <div className="bg-primary/10 border-l-4 border-primary/50 p-6 rounded-r-xl mb-6 mt-8">
-              <p className="text-ink text-lg leading-relaxed">
+              <p className="text-ink text-base md:text-lg leading-relaxed">
                 <span className="font-bold text-ink">UI Change:</span> Summaries were displayed in a minimized form with a brief 3-5 word descriptor, allowing users to quickly reference key context without reading the full summary and preserving access even when the panel auto-minimized for subsequent support.
               </p>
             </div>
@@ -378,7 +378,7 @@ const XplainPersonalizationSection: React.FC = () => {
           </div>
         </div>
 
-        <p className="text-ink-light mb-6 text-lg">
+        <p className="text-ink-light mb-6 text-base md:text-lg">
           I ran <span className="text-ink font-bold">11 user studies</span> for this study.
         </p>
 
@@ -389,7 +389,7 @@ const XplainPersonalizationSection: React.FC = () => {
           </div>
           <div>
             <div className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Project Status</div>
-            <p className="text-ink font-bold text-lg md:text-xl leading-relaxed">
+            <p className="text-ink font-bold text-base md:text-lg md:text-xl leading-relaxed">
               Data collection and analysis for this study is still ongoing. I am currently responsible for the thematic analysis of interview data in ATLAS.ti.
             </p>
           </div>

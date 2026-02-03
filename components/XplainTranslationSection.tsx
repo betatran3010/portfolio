@@ -155,7 +155,7 @@ const XplainTranslationSection: React.FC = () => {
               <span className="w-2 h-6 bg-primary rounded-full"></span>
               Why Translation Support?
             </h4>
-            <div className="prose text-ink-light leading-relaxed text-lg space-y-4">
+            <div className="prose text-ink-light leading-relaxed text-base md:text-lg space-y-4">
               <p>
                 In the baseline study, some participants suggested translation-based support, reporting that native-language explanations would feel faster and less mentally taxing. This aligns with psycholinguistic findings that bilingual speakers process meaning less automatically in L2 and require more effort to resolve conceptual difficulty, especially under time pressure.
               </p>
@@ -176,7 +176,7 @@ const XplainTranslationSection: React.FC = () => {
               <span className="w-2 h-6 bg-primary rounded-full"></span>
               Why Domain & Context Matter
             </h4>
-            <div className="prose text-ink-light leading-relaxed text-lg space-y-4">
+            <div className="prose text-ink-light leading-relaxed text-base md:text-lg space-y-4">
               <p>
                 Real-time video conversations (e.g., classes, meetings, telemedicine visits) routinely involve:
               </p>
@@ -185,7 +185,7 @@ const XplainTranslationSection: React.FC = () => {
                   <Globe className="w-6 h-6 text-primary shrink-0" />
                   <div>
                     <span className="font-bold text-ink block text-sm uppercase tracking-wide mb-1">Domain Specificity</span>
-                    <ul className="space-y-2 text-lg text-ink-light list-disc pl-6 marker:text-primary">
+                    <ul className="space-y-2 text-base md:text-lg text-ink-light list-disc pl-6 marker:text-primary">
                       <li><span className="text-ink font-bold">High-domain language:</span> Technical, specialized terminology requiring domain expertise for full comprehension and application</li>
                       <li><span className="text-ink font-bold">Low-domain language:</span> Descriptive, academic, or everyday vocabulary not requiring specialized domain knowledge</li>
                     </ul>
@@ -195,7 +195,7 @@ const XplainTranslationSection: React.FC = () => {
                   <Brain className="w-6 h-6 text-primary shrink-0" />
                   <div>
                     <span className="font-bold text-ink block text-sm uppercase tracking-wide mb-1">Processing Context</span>
-                    <ul className="space-y-2 text-lg text-ink-light list-disc pl-6 marker:text-primary">
+                    <ul className="space-y-2 text-base md:text-lg text-ink-light list-disc pl-6 marker:text-primary">
                       <li><span className="text-ink font-bold">Comprehension:</span> Processing and understanding incoming speech</li>
                       <li><span className="text-ink font-bold">Production:</span> Preparing and delivering responses under time pressure</li>
                     </ul>
@@ -207,7 +207,7 @@ const XplainTranslationSection: React.FC = () => {
                 These dimensions matter as:
               </p>
 
-              <ul className="space-y-2 text-lg text-ink-light list-disc pl-6 marker:text-primary">
+              <ul className="space-y-2 text-base md:text-lg text-ink-light list-disc pl-6 marker:text-primary">
                 <li>Technical concepts may be more strongly represented in one language than another</li>
                 <li>Comprehension allows time to integrate information, while Production requires immediate transformation into speech</li>
               </ul>
@@ -273,7 +273,7 @@ const XplainTranslationSection: React.FC = () => {
 
             <div className="mt-8 space-y-4">
               <h5 className="font-bold text-ink text-sm tracking-wide">Rationale</h5>
-              <p className="text-ink-light text-lg leading-relaxed">
+              <p className="text-ink-light text-base md:text-lg leading-relaxed">
                 Unlike the personalization study, which evaluated specific proficiency-aware design choices, this study adopts a condition-based factorial design to systematically test how different language display formats function under varying conversational demands. Considering the psycholinguistic literature and the nature of live conversations, explanatory support may benefit from L1 presentation to reduce parsing effort, while producible support may benefit from L2 presentation to support direct lexical access during speech. However, bilingual language use varies widely across individuals, domains, and moments within live conversation, and these assumptions have not been tested under controlled, real-time interaction. Rather than committing to a single strategy, we manipulated display format (Translation, English, Bilingual) across domain specificity and processing context to observe when and for whom each format is most effective.
               </p>
             </div>
@@ -281,10 +281,10 @@ const XplainTranslationSection: React.FC = () => {
 
           {/* Constraints - Unboxed */}
           <div className="space-y-6">
-            <h4 className="font-bold text-ink text-lg flex items-center gap-2">
+            <h4 className="font-bold text-ink text-base md:text-lg flex items-center gap-2">
               <Clock className="w-5 h-5 text-primary" /> Key Constraints
             </h4>
-            <ul className="space-y-4 text-lg text-ink-light list-disc pl-6 marker:text-primary">
+            <ul className="space-y-4 text-base md:text-lg text-ink-light list-disc pl-6 marker:text-primary">
               <li>Participants: Chinese–English bilinguals.</li>
               <li>Conceptual L1/L2 familiarity was excluded due to high subjectivity and individual variability (lexical L2 familiarity was retained, as clarifications are designed to support access to unfamiliar L2 terms).</li>
               <li>12 clarification events per participant (1 per condition).</li>
@@ -292,7 +292,7 @@ const XplainTranslationSection: React.FC = () => {
 
             <div className="pt-4 space-y-4">
               <h5 className="font-bold text-ink text-sm tracking-wide">Why only clarifications?</h5>
-              <p className="text-lg text-slate-500 leading-relaxed">
+              <p className="text-base md:text-lg text-slate-500 leading-relaxed">
                 Given the 1-hour session constraint with a ~30-minute live conversation needed to preserve natural interaction and allow pre- and post-task measures, we focused exclusively on clarification support. Clarifications are the most direct and controllable form of assistance, enabling precise experimental manipulation without altering prescripted conversational flow. Including additional features (i.e., suggestions or summaries) would have added factors, extended session length, and increased participant fatigue, reducing both ecological validity and measurement reliability.
               </p>
             </div>
@@ -313,7 +313,7 @@ const XplainTranslationSection: React.FC = () => {
           {/* Card H1 */}
           <div className="bg-white p-6 md:p-8 rounded-3xl border-2 border-primary shadow-sm transition-all group">
             <h4 className="text-sm font-black text-primary uppercase tracking-widest mb-3">H1: Domain × Format</h4>
-            <p className="text-ink font-bold text-lg mb-4 leading-tight">
+            <p className="text-ink font-bold text-base md:text-lg mb-4 leading-tight">
               High-Domain content will show greater sensitivity to display format than Low-Domain content.
             </p>
             <p className="text-base text-slate-500 leading-relaxed border-l-2 border-slate-200 pl-4">
@@ -324,7 +324,7 @@ const XplainTranslationSection: React.FC = () => {
           {/* Card H2 */}
           <div className="bg-white p-6 md:p-8 rounded-3xl border-2 border-primary shadow-sm transition-all group">
             <h4 className="text-sm font-black text-primary uppercase tracking-widest mb-3">H2: Context × Format</h4>
-            <p className="text-ink font-bold text-lg mb-4 leading-tight">
+            <p className="text-ink font-bold text-base md:text-lg mb-4 leading-tight">
               Formats that have translations (L1/Bilingual) will help more in Comprehension than in Production.
             </p>
             <p className="text-base text-slate-500 leading-relaxed border-l-2 border-slate-200 pl-4">
@@ -335,7 +335,7 @@ const XplainTranslationSection: React.FC = () => {
           {/* Card H3 */}
           <div className="bg-white p-6 md:p-8 rounded-3xl border-2 border-primary shadow-sm transition-all group">
             <h4 className="text-sm font-black text-primary uppercase tracking-widest mb-3">H3: Domain × Context × Format</h4>
-            <p className="text-ink font-bold text-lg mb-4 leading-tight">
+            <p className="text-ink font-bold text-base md:text-lg mb-4 leading-tight">
               The Domain × Format interaction will be strongest in Comprehension and attenuated in Production.
             </p>
             <p className="text-base text-slate-500 leading-relaxed border-l-2 border-slate-200 pl-4">
@@ -346,7 +346,7 @@ const XplainTranslationSection: React.FC = () => {
           {/* Card H4 */}
           <div className="bg-white p-6 md:p-8 rounded-3xl border-2 border-primary shadow-sm transition-all group">
             <h4 className="text-sm font-black text-primary uppercase tracking-widest mb-3">H4: Individual Differences</h4>
-            <p className="text-ink font-bold text-lg mb-4 leading-tight">
+            <p className="text-ink font-bold text-base md:text-lg mb-4 leading-tight">
               Lower L2 proficiency participants will show larger Translation benefits.
             </p>
             <p className="text-base text-slate-500 leading-relaxed border-l-2 border-slate-200 pl-4">
@@ -367,11 +367,11 @@ const XplainTranslationSection: React.FC = () => {
 
         <div>
           <h4 className="font-bold text-ink text-xl mb-4">Topic: Dietitian Visit</h4>
-          <p className="text-ink-light leading-relaxed mb-8 max-w-4xl text-lg">
+          <p className="text-ink-light leading-relaxed mb-8 max-w-4xl text-base md:text-lg">
             We chose a dietitian visit as  it naturally integrates:
           </p>
 
-          <ul className="space-y-3 text-lg text-ink-light list-disc pl-6 marker:text-primary mb-10">
+          <ul className="space-y-3 text-base md:text-lg text-ink-light list-disc pl-6 marker:text-primary mb-10">
             <li><span className="text-ink font-bold">High-Domain</span> (medical, diet terminology) and <span className="text-ink font-bold">low-domain</span> (non-technical) terms</li>
             <li><span className="text-ink font-bold">Comprehension</span> (listening to explanations) and <span className="text-ink font-bold">Production</span> (responding and describing habits, conditions, etc.)</li>
             <li><span className="text-ink font-bold">Realistic time pressure</span> without requiring specialized prior knowledge.</li>
@@ -460,12 +460,12 @@ const XplainTranslationSection: React.FC = () => {
         {/* Vertical Stack: Text -> Images below */}
         <div className="flex flex-col gap-10">
           <div className="space-y-6">
-            <p className="text-ink-light leading-relaxed text-lg">
+            <p className="text-ink-light leading-relaxed text-base md:text-lg">
               Clarifications appear in <span className="font-bold text-ink">Translation, English, or Bilingual</span> formats depending on the condition. Users can manually switch languages, preserving autonomy and revealing preference behavior.
             </p>
 
             <div className="bg-primary/10 border-l-4 border-primary/50 p-6 rounded-r-xl">
-              <p className="text-ink text-lg leading-relaxed">
+              <p className="text-ink text-base md:text-lg leading-relaxed">
                 <span className="font-bold">UI Change:</span> Script constrained to 1–2 lines per slide to simulate real caption timing and prevent premature clicking.
               </p>
             </div>
@@ -485,12 +485,12 @@ const XplainTranslationSection: React.FC = () => {
           <h3 className="text-xl font-heading font-bold text-ink">Survey Design</h3>
         </div>
 
-        <p className="text-ink-light text-lg">I built both surveys in <span className="font-bold text-ink">Qualtrics</span>.</p>
+        <p className="text-ink-light text-base md:text-lg">I built both surveys in <span className="font-bold text-ink">Qualtrics</span>.</p>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Pre-Study */}
           <div className="bg-white border-2 border-slate-100 rounded-3xl p-6 md:p-8 h-full shadow-sm">
-            <h4 className="text-lg font-bold text-ink mb-6 flex items-center gap-2">
+            <h4 className="text-base md:text-lg font-bold text-ink mb-6 flex items-center gap-2">
               <FileText className="w-5 h-5 text-primary" /> Pre-Study Survey
             </h4>
             <ul className="space-y-6">
@@ -515,7 +515,7 @@ const XplainTranslationSection: React.FC = () => {
 
           {/* Post-Study */}
           <div className="bg-white border-2 border-slate-100 rounded-3xl p-6 md:p-8 h-full shadow-sm">
-            <h4 className="text-lg font-bold text-ink mb-6 flex items-center gap-2">
+            <h4 className="text-base md:text-lg font-bold text-ink mb-6 flex items-center gap-2">
               <FileText className="w-5 h-5 text-primary" /> Post-Study Survey
             </h4>
             <ul className="space-y-6">
@@ -576,7 +576,7 @@ const XplainTranslationSection: React.FC = () => {
           </div>
         </div>
 
-        <p className="text-ink-light">I have run <span className="font-bold text-ink">4 user studies</span> for this assignment.</p>
+        <p className="text-ink-light text-base md:text-lg">I have run <span className="font-bold text-ink">4 user studies</span> for this assignment.</p>
 
         {/* Note: Ongoing Data Analysis (Dashed Style) */}
         <div className="mt-8 border-2 border-dashed border-slate-300 bg-slate-50 p-6 md:p-8 rounded-3xl flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
