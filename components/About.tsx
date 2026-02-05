@@ -54,45 +54,39 @@ const About: React.FC = () => {
         <div className="space-y-8">
           <div className="space-y-2">
             <h3 className="text-2xl md:text-3xl text-ink font-heading font-bold leading-tight">
-              Women in Computing at Cornell <span className="font-sans font-normal text-ink-light text-xl block sm:inline sm:ml-2"> - Faculty Relations Director</span>
+              Women in Computing at Cornell{" "}
+              <span className="font-sans font-normal text-ink-light text-xl block sm:inline sm:ml-2">
+                - Faculty Relations Director
+              </span>
             </h3>
             <p className="text-base md:text-lg text-ink-light leading-relaxed max-w-4xl">
-              Fostering an inclusive community for women and gender minorities in tech. I organize the Lunch Bunch program, facilitating weekly roundtable discussions that connect underclassmen with faculty and encourage early research engagement. I engage with many accomplished HCI researchers and learn about their work through this initiative! I also represent WICC and the student body in faculty board meetings to discuss coursework, advising, workload, and departmental improvements.            
+              Fostering an inclusive community for women and gender minorities in tech. I organize the Lunch Bunch program, facilitating weekly roundtable discussions that connect underclassmen with faculty and encourage early research engagement. I engage with many accomplished HCI researchers and learn about their work through this initiative! I also represent WICC and the student body in faculty board meetings to discuss coursework, advising, workload, and departmental improvements.
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 md:gap-6">
-            {/* Row 1: 2 Photos */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6 h-64 md:h-80">
-              {[`${import.meta.env.BASE_URL}images/wicc-prof-abe-davis.JPG`, `${import.meta.env.BASE_URL}images/wicc-prof-andrea-won.JPG`].map((src, i) => (
-                <div key={i} className="w-full h-full bg-slate-100 rounded-[2rem] overflow-hidden border-2 border-slate-100 shadow-sm">
-                  <img
-                    src={src}
-                    alt={`WICC Activity ${i + 1}`}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = `https://placehold.co/800x600/e2e8f0/475569?text=WICC+${i + 1}`;
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Row 1: 2 Photos */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6 h-64 md:h-80">
-              {[`${import.meta.env.BASE_URL}images/wicc-org.JPEG`, `${import.meta.env.BASE_URL}images/wicc-clubfest.jpg`].map((src, i) => (
-                <div key={i} className="w-full h-full bg-slate-100 rounded-[2rem] overflow-hidden border-2 border-slate-100 shadow-sm">
-                  <img
-                    src={src}
-                    alt={`WICC Activity ${i + 1}`}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = `https://placehold.co/800x600/e2e8f0/475569?text=WICC+${i + 1}`;
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
+          {/* Responsive Image Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            {[
+              `${import.meta.env.BASE_URL}images/wicc-prof-abe-davis.JPG`,
+              `${import.meta.env.BASE_URL}images/wicc-prof-andrea-won.JPG`,
+              `${import.meta.env.BASE_URL}images/wicc-org.JPEG`,
+              `${import.meta.env.BASE_URL}images/wicc-clubfest.jpg`,
+            ].map((src, i) => (
+              <div
+                key={i}
+                className="w-full h-64 md:h-80 bg-slate-100 rounded-[2rem] overflow-hidden border-2 border-slate-100 shadow-sm"
+              >
+                <img
+                  src={src}
+                  alt={`WICC Activity ${i + 1}`}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src =
+                      "https://placehold.co/800x600/e2e8f0/475569?text=WICC";
+                  }}
+                />
+              </div>
+            ))}
           </div>
         </div>
 
