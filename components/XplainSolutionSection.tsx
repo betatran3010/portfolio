@@ -149,7 +149,7 @@ const XplainSolutionSection: React.FC = () => {
               <span className="bg-ink text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">2</span> Suggestions
             </h4>
             <p className="text-ink-light leading-relaxed mb-4 text-base md:text-lg">
-              Disfluencies often emerge during conceptualization and formulation under rapid production demands. Suggestions surface relevant ideas and sentence-level response structures when participants are prompted for input, pre-activating semantic and syntactic material to <span className="text-ink font-bold">support response planning</span>.
+              Disfluencies often emerge during conceptualization and formulation under rapid production demands. Suggestions surface relevant ideas and sentence-level response structures when participants are prompted for input (i.e., after questions), pre-activating semantic and syntactic material to <span className="text-ink font-bold">support response planning</span>.
             </p>
           </div>
 
