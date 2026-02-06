@@ -69,11 +69,11 @@ const XplainProblemSection: React.FC = () => {
           <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">Impact on Non-Native Speakers</h3>
           <div className="space-y-4">
             <p className="text-ink-light text-base md:text-lg leading-relaxed">
-              For non-native speakers, coordinating across a native and a non-native language, limited language proficiency, and cultural unfamiliarity make these cognitive processes more effortful. Interviews and prior studies show that international students often avoid asking questions during live classes and instead spend additional time reviewing materials afterward. Similar patterns appear in multilingual or cross-functional workplaces, leading to uneven participation and slower decision-making.            </p>
-
+              Non-native speakers often have less automatic access to linguistic, cultural, and domain-specific knowledge, which can make the aforementioned cognitive processes and contextual cue integration more effortful.
+            </p>
             <div className="bg-primary/10 border-l-4 border-primary/50 p-4 rounded-r-xl mb-6">
-              <p className="text-ink-light text-base md:text-lg leading-relaxed">
-                <span className="text-ink font-bold">Result:</span> Disfluencies and inappropriate responses. They are often misinterpreted as disengagement or lack of competence, rather than effortful cognitive and linguistic processing under technical constraints.
+              <p className="text-ink-light text-base md:text-lg leading-relaxed">,
+                <span className="text-ink font-bold">Result: Miscomprehension, disfluencies, awkward pauses, reduced participation, anxiety, and inappropriate responses.</span> They are often misinterpreted as disengagement or lack of competence, rather than effortful cognitive and linguistic processing under technical constraints.
               </p>
             </div>
           </div>
